@@ -116,9 +116,10 @@ const formData = ref<Doctor>({
 
 const handleSave = () => {
   updateDoctor(formData.value)
-  const event = new CustomEvent('doctorUpdated')
-  window.dispatchEvent(event)
-  const closeEvent = new CustomEvent('closeModal')
-  window.dispatchEvent(closeEvent)
+  emit('close')
 }
+
+const emit = defineEmits<{
+  close: []
+}>()
 </script>
