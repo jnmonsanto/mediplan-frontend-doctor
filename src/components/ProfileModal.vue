@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
         <h2 class="text-xl font-semibold text-neutral-900">Doctor Profile</h2>
         <button
-          @click="$emit('close')"
+          @click="emit('close')"
           class="rounded-lg p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
         >
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
       <!-- Footer -->
       <div class="flex gap-3 border-t border-neutral-200 px-6 py-4">
         <button
-          @click="$emit('close')"
+          @click="emit('close')"
           class="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
         >
           Cancel
@@ -103,7 +103,7 @@ import { ref } from 'vue'
 import { useAppData } from '../composables/useAppData'
 import type { Doctor } from '../types'
 
-defineEmits<{
+const emit = defineEmits<{
   close: []
 }>()
 
@@ -116,9 +116,6 @@ const formData = ref<Doctor>({
 
 const handleSave = () => {
   updateDoctor(formData.value)
-  const emit = defineEmits<{ close: [] }>()
-  // Close the modal through parent's close event
-  const event = new Event('close')
-  window.dispatchEvent(event)
+  emit('close')
 }
 </script>
