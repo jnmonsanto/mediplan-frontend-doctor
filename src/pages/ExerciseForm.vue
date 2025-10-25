@@ -3,17 +3,30 @@
     <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <!-- Page Header -->
       <div class="mb-8">
-        <router-link to="/" class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4">
+        <router-link
+          to="/"
+          class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4"
+        >
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           Back to Dashboard
         </router-link>
-        <h1 class="text-3xl font-bold text-neutral-900">{{ isEditing ? 'Edit Exercise' : 'Add New Exercise' }}</h1>
+        <h1 class="text-3xl font-bold text-neutral-900">
+          {{ isEditing ? 'Edit Exercise' : 'Add New Exercise' }}
+        </h1>
       </div>
 
       <!-- Form -->
-      <form @submit.prevent="handleSubmit" class="space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
+      <form
+        @submit.prevent="handleSubmit"
+        class="space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm"
+      >
         <!-- Name -->
         <div>
           <label class="block text-sm font-medium text-neutral-700">Exercise Name *</label>
@@ -35,16 +48,23 @@
             class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 font-mono text-sm text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
             placeholder='{"difficulty": "medium", "duration": 5}'
           />
-          <p class="mt-2 text-xs text-neutral-600">Enter valid JSON format for exercise configuration.</p>
+          <p class="mt-2 text-xs text-neutral-600">
+            Enter valid JSON format for exercise configuration.
+          </p>
           <div v-if="jsonError" class="mt-2 rounded-lg bg-red-50 p-3 text-sm text-red-700">
             {{ jsonError }}
           </div>
         </div>
 
         <!-- Preview -->
-        <div v-if="formData.jsonData" class="rounded-lg bg-neutral-50 p-4 border border-neutral-200">
+        <div
+          v-if="formData.jsonData"
+          class="rounded-lg bg-neutral-50 p-4 border border-neutral-200"
+        >
           <p class="text-sm font-medium text-neutral-700 mb-3">JSON Preview:</p>
-          <pre class="text-xs text-neutral-600 overflow-auto">{{ JSON.stringify(formData.jsonData, null, 2) }}</pre>
+          <pre class="text-xs text-neutral-600 overflow-auto">{{
+            JSON.stringify(formData.jsonData, null, 2)
+          }}</pre>
         </div>
 
         <!-- Form Actions -->
@@ -104,7 +124,7 @@ watch(
     } else {
       formData.value.jsonData = {}
     }
-  }
+  },
 )
 
 onMounted(() => {

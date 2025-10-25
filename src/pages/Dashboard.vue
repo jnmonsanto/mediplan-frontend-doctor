@@ -51,7 +51,12 @@
             class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"
+              />
             </svg>
             Add Plan
           </router-link>
@@ -76,10 +81,16 @@
                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            <p class="mt-4 text-neutral-600">No plans found. Create your first plan to get started.</p>
+            <p class="mt-4 text-neutral-600">
+              No plans found. Create your first plan to get started.
+            </p>
           </div>
 
-          <div v-for="plan in filteredPlans" :key="plan.id" class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            v-for="plan in filteredPlans"
+            :key="plan.id"
+            class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
             <div class="flex gap-6">
               <!-- Patient Photo -->
               <div v-if="plan.patient" class="flex-shrink-0">
@@ -206,7 +217,12 @@
             class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"
+              />
             </svg>
             Add Patient
           </router-link>
@@ -231,10 +247,16 @@
                 d="M12 4.354a4 4 0 110 5.292M15 12H9m4 8H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v11a2 2 0 01-2 2z"
               />
             </svg>
-            <p class="mt-4 text-neutral-600">No patients found. Add your first patient to get started.</p>
+            <p class="mt-4 text-neutral-600">
+              No patients found. Add your first patient to get started.
+            </p>
           </div>
 
-          <div v-for="patient in filteredPatients" :key="patient.id" class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            v-for="patient in filteredPatients"
+            :key="patient.id"
+            class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
             <div class="flex gap-6">
               <!-- Patient Photo -->
               <div class="flex-shrink-0">
@@ -323,7 +345,12 @@
             class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"
+              />
             </svg>
             Add Exercise
           </router-link>
@@ -348,17 +375,25 @@
                 d="M13 10V3L4 14h7v7l9-11h-7z"
               />
             </svg>
-            <p class="mt-4 text-neutral-600">No exercises found. Add your first exercise to get started.</p>
+            <p class="mt-4 text-neutral-600">
+              No exercises found. Add your first exercise to get started.
+            </p>
           </div>
 
-          <div v-for="exercise in filteredExercises" :key="exercise.id" class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            v-for="exercise in filteredExercises"
+            :key="exercise.id"
+            class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
             <div class="flex items-start justify-between">
               <div class="flex-1">
                 <h3 class="text-lg font-semibold text-neutral-900">{{ exercise.name }}</h3>
                 <p class="text-sm text-neutral-600 mt-1">ID: {{ exercise.id }}</p>
                 <div v-if="exercise.jsonData" class="mt-4 rounded-lg bg-neutral-50 p-3">
                   <p class="text-xs font-medium text-neutral-700 mb-2">JSON Data:</p>
-                  <pre class="text-xs text-neutral-600 overflow-auto max-h-40">{{ JSON.stringify(exercise.jsonData, null, 2) }}</pre>
+                  <pre class="text-xs text-neutral-600 overflow-auto max-h-40">{{
+                    JSON.stringify(exercise.jsonData, null, 2)
+                  }}</pre>
                 </div>
               </div>
 
@@ -406,7 +441,8 @@ import { ref, computed } from 'vue'
 import { useAppData } from '../composables/useAppData'
 import MainLayout from '../layouts/MainLayout.vue'
 
-const { getPlans, getPatients, getExercises, deletePlan, deletePatient, deleteExercise } = useAppData()
+const { getPlans, getPatients, getExercises, deletePlan, deletePatient, deleteExercise } =
+  useAppData()
 
 const activeView = ref<'plans' | 'patients' | 'exercises'>('plans')
 

@@ -3,17 +3,30 @@
     <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <!-- Page Header -->
       <div class="mb-8">
-        <router-link to="/" class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4">
+        <router-link
+          to="/"
+          class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4"
+        >
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           Back to Dashboard
         </router-link>
-        <h1 class="text-3xl font-bold text-neutral-900">{{ isEditing ? 'Edit Plan' : 'Create New Plan' }}</h1>
+        <h1 class="text-3xl font-bold text-neutral-900">
+          {{ isEditing ? 'Edit Plan' : 'Create New Plan' }}
+        </h1>
       </div>
 
       <!-- Form -->
-      <form @submit.prevent="handleSubmit" class="space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
+      <form
+        @submit.prevent="handleSubmit"
+        class="space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm"
+      >
         <!-- Patient Selection -->
         <div>
           <label class="block text-sm font-medium text-neutral-700">Patient *</label>
@@ -33,15 +46,26 @@
         <div>
           <label class="block text-sm font-medium text-neutral-700 mb-4">Exercises</label>
 
-          <div v-if="formData.exercises.length === 0" class="mb-4 rounded-lg border border-dashed border-neutral-300 bg-neutral-50 px-4 py-6 text-center">
+          <div
+            v-if="formData.exercises.length === 0"
+            class="mb-4 rounded-lg border border-dashed border-neutral-300 bg-neutral-50 px-4 py-6 text-center"
+          >
             <p class="text-neutral-600 text-sm">No exercises added yet. Add exercises below.</p>
           </div>
 
           <div v-else class="mb-4 space-y-3">
-            <div v-for="(exercise, idx) in formData.exercises" :key="idx" class="flex items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-4">
+            <div
+              v-for="(exercise, idx) in formData.exercises"
+              :key="idx"
+              class="flex items-center gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-4"
+            >
               <div class="flex-1">
-                <p class="font-medium text-neutral-900">{{ exercise.exercise?.name || 'Unknown' }}</p>
-                <p class="text-sm text-neutral-600">{{ exercise.sets }} sets × {{ exercise.repetitions }} reps</p>
+                <p class="font-medium text-neutral-900">
+                  {{ exercise.exercise?.name || 'Unknown' }}
+                </p>
+                <p class="text-sm text-neutral-600">
+                  {{ exercise.sets }} sets × {{ exercise.repetitions }} reps
+                </p>
               </div>
               <button
                 type="button"
@@ -49,7 +73,12 @@
                 class="rounded-lg p-2 text-neutral-500 hover:bg-white hover:text-red-600 transition-colors"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>

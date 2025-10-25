@@ -3,17 +3,30 @@
     <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <!-- Page Header -->
       <div class="mb-8">
-        <router-link to="/" class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4">
+        <router-link
+          to="/"
+          class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4"
+        >
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           Back to Dashboard
         </router-link>
-        <h1 class="text-3xl font-bold text-neutral-900">{{ isEditing ? 'Edit Patient' : 'Add New Patient' }}</h1>
+        <h1 class="text-3xl font-bold text-neutral-900">
+          {{ isEditing ? 'Edit Patient' : 'Add New Patient' }}
+        </h1>
       </div>
 
       <!-- Form -->
-      <form @submit.prevent="handleSubmit" class="space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
+      <form
+        @submit.prevent="handleSubmit"
+        class="space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm"
+      >
         <!-- Name -->
         <div>
           <label class="block text-sm font-medium text-neutral-700">Name *</label>
@@ -60,7 +73,11 @@
             placeholder="Enter photo URL"
           />
           <div v-if="formData.photo" class="mt-4 flex justify-center">
-            <img :src="formData.photo" :alt="formData.name" class="h-24 w-24 rounded-full object-cover ring-2 ring-primary-100" />
+            <img
+              :src="formData.photo"
+              :alt="formData.name"
+              class="h-24 w-24 rounded-full object-cover ring-2 ring-primary-100"
+            />
           </div>
         </div>
 

@@ -36,7 +36,12 @@
           class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
         >
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
           </svg>
           Add Plan
         </router-link>
@@ -61,10 +66,16 @@
               d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
             />
           </svg>
-          <p class="mt-4 text-neutral-600">No plans found. Create your first plan to get started.</p>
+          <p class="mt-4 text-neutral-600">
+            No plans found. Create your first plan to get started.
+          </p>
         </div>
 
-        <div v-for="plan in filteredPlans" :key="plan.id" class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div
+          v-for="plan in filteredPlans"
+          :key="plan.id"
+          class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+        >
           <div class="flex gap-6">
             <!-- Patient Photo -->
             <div v-if="plan.patient" class="flex-shrink-0">

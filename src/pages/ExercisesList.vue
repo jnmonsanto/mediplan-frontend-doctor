@@ -34,7 +34,12 @@
           class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
         >
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
           </svg>
           Add Exercise
         </router-link>
@@ -59,17 +64,25 @@
               d="M13 10V3L4 14h7v7l9-11h-7z"
             />
           </svg>
-          <p class="mt-4 text-neutral-600">No exercises found. Add your first exercise to get started.</p>
+          <p class="mt-4 text-neutral-600">
+            No exercises found. Add your first exercise to get started.
+          </p>
         </div>
 
-        <div v-for="exercise in filteredExercises" :key="exercise.id" class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div
+          v-for="exercise in filteredExercises"
+          :key="exercise.id"
+          class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+        >
           <div class="flex items-start justify-between">
             <div class="flex-1">
               <h3 class="text-lg font-semibold text-neutral-900">{{ exercise.name }}</h3>
               <p class="text-sm text-neutral-600 mt-1">ID: {{ exercise.id }}</p>
               <div v-if="exercise.jsonData" class="mt-4 rounded-lg bg-neutral-50 p-3">
                 <p class="text-xs font-medium text-neutral-700 mb-2">JSON Data:</p>
-                <pre class="text-xs text-neutral-600 overflow-auto max-h-40">{{ JSON.stringify(exercise.jsonData, null, 2) }}</pre>
+                <pre class="text-xs text-neutral-600 overflow-auto max-h-40">{{
+                  JSON.stringify(exercise.jsonData, null, 2)
+                }}</pre>
               </div>
             </div>
 

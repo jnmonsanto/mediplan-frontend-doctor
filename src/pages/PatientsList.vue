@@ -35,7 +35,12 @@
           class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
         >
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
           </svg>
           Add Patient
         </router-link>
@@ -60,10 +65,16 @@
               d="M12 4.354a4 4 0 110 5.292M15 12H9m4 8H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v11a2 2 0 01-2 2z"
             />
           </svg>
-          <p class="mt-4 text-neutral-600">No patients found. Add your first patient to get started.</p>
+          <p class="mt-4 text-neutral-600">
+            No patients found. Add your first patient to get started.
+          </p>
         </div>
 
-        <div v-for="patient in filteredPatients" :key="patient.id" class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div
+          v-for="patient in filteredPatients"
+          :key="patient.id"
+          class="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+        >
           <div class="flex gap-6">
             <!-- Patient Photo -->
             <div class="flex-shrink-0">
