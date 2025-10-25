@@ -122,6 +122,6 @@ const handleSubmit = async () => {
     addPatient(patientData)
   }
 
-  router.push('/patients')
+  router.push('/')
 }
 </script>
