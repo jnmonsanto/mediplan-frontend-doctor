@@ -98,12 +98,13 @@
 
         <!-- Form Actions -->
         <div class="flex gap-3 pt-4 border-t border-neutral-200">
-          <router-link
-            to="/"
+          <button
+            type="button"
+            @click="$router.push('/')"
             class="flex-1 rounded-lg border border-neutral-300 px-4 py-3 text-center text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
           >
             Cancel
-          </router-link>
+          </button>
           <button
             type="submit"
             class="flex-1 rounded-lg bg-primary-600 px-4 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-primary-700"
