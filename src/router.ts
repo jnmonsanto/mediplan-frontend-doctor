@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Dashboard from './pages/Dashboard.vue'
 import PlansList from './pages/PlansList.vue'
 import PatientsList from './pages/PatientsList.vue'
 import ExercisesList from './pages/ExercisesList.vue'
@@ -9,7 +10,12 @@ import ExerciseForm from './pages/ExerciseForm.vue'
 const routes = [
   {
     path: '/',
-    name: 'Plans',
+    name: 'Dashboard',
+    component: Dashboard,
+  },
+  {
+    path: '/plans',
+    name: 'PlansPage',
     component: PlansList,
   },
   {
