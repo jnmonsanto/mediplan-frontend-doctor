@@ -3,11 +3,11 @@
     <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <!-- Page Header -->
       <div class="mb-8">
-        <router-link to="/exercises" class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4">
+        <router-link to="/" class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-2 mb-4">
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Exercises
+          Back to Dashboard
         </router-link>
         <h1 class="text-3xl font-bold text-neutral-900">{{ isEditing ? 'Edit Exercise' : 'Add New Exercise' }}</h1>
       </div>
