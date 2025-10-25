@@ -131,6 +131,6 @@ const handleSubmit = async () => {
     addExercise(exerciseData)
   }
 
-  router.push('/exercises')
+  router.push('/')
 }
 </script>
