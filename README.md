@@ -122,6 +122,7 @@ Top-right profile icon opens doctor profile editor.
 This MediPlan frontend is designed to work seamlessly with a Strapi backend. The app currently uses mock data by default, but is fully prepared to consume data from a Strapi server.
 
 The integration is handled through:
+
 - **`src/api/strapiService.ts`** - Service layer that handles all API communication
 - **`src/composables/useAppData.ts`** - Vue composable that manages application state
 - **Environment variables** - Configuration for Strapi URL
@@ -155,6 +156,7 @@ npm run dev
 ```
 
 The frontend will now:
+
 - Log: `[Strapi] Connected to: http://localhost:1337`
 - Fetch data from your Strapi API instead of using mock data
 - Automatically fall back to mock data if the API is unreachable
@@ -168,6 +170,7 @@ The frontend will now:
 #### Development Environment
 
 Create `.env.local`:
+
 ```bash
 VITE_STRAPI_URL=http://localhost:1337
 ```
@@ -177,18 +180,21 @@ VITE_STRAPI_URL=http://localhost:1337
 Set the environment variable in your deployment platform:
 
 **For Vercel:**
+
 ```
 Go to Project Settings → Environment Variables
 Add: VITE_STRAPI_URL = https://your-strapi-domain.com
 ```
 
 **For Netlify:**
+
 ```
 Go to Site Settings → Build & Deploy → Environment
 Add: VITE_STRAPI_URL = https://your-strapi-domain.com
 ```
 
 **For Docker/Self-hosted:**
+
 ```dockerfile
 ENV VITE_STRAPI_URL=https://your-strapi-domain.com
 ```
@@ -196,6 +202,7 @@ ENV VITE_STRAPI_URL=https://your-strapi-domain.com
 #### Testing the Configuration
 
 After setting the environment variable:
+
 1. Open browser DevTools (F12)
 2. Go to Console tab
 3. You should see: `[Strapi] Connected to: http://localhost:1337`
@@ -213,6 +220,7 @@ The frontend expects your Strapi collections to be structured as follows:
 A single document for the authenticated doctor's profile.
 
 **Fields:**
+
 ```json
 {
   "id": "1",
@@ -233,6 +241,7 @@ A single document for the authenticated doctor's profile.
 List of patients managed by the doctor.
 
 **Fields:**
+
 ```json
 {
   "id": "1",
@@ -244,6 +253,7 @@ List of patients managed by the doctor.
 ```
 
 **Strapi API Endpoints:**
+
 ```
 GET    /api/patients              // Get all patients
 POST   /api/patients              // Create a patient
@@ -258,6 +268,7 @@ DELETE /api/patients/:id          // Delete a patient
 Library of available exercises.
 
 **Fields:**
+
 ```json
 {
   "id": "1",
@@ -271,6 +282,7 @@ Library of available exercises.
 ```
 
 **Strapi API Endpoints:**
+
 ```
 GET    /api/exercises             // Get all exercises
 POST   /api/exercises             // Create an exercise
@@ -285,6 +297,7 @@ DELETE /api/exercises/:id         // Delete an exercise
 Exercise plans assigned to patients.
 
 **Fields:**
+
 ```json
 {
   "id": "1",
@@ -316,6 +329,7 @@ Exercise plans assigned to patients.
 ```
 
 **Strapi API Endpoints:**
+
 ```
 GET    /api/plans                 // Get all plans
 POST   /api/plans                 // Create a plan
@@ -330,6 +344,7 @@ DELETE /api/plans/:id             // Delete a plan
 The frontend expects standard Strapi response format:
 
 ### Single Item Response
+
 ```json
 {
   "data": {
@@ -342,6 +357,7 @@ The frontend expects standard Strapi response format:
 ```
 
 ### Collection Response
+
 ```json
 {
   "data": [
@@ -375,9 +391,9 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       origin: [
-        'http://localhost:3000',           // Local dev frontend
-        'http://localhost:5173',           // Vite dev server
-        'https://yourdomain.com',          // Production frontend
+        'http://localhost:3000', // Local dev frontend
+        'http://localhost:5173', // Vite dev server
+        'https://yourdomain.com', // Production frontend
       ],
       credentials: true,
     },
@@ -389,7 +405,7 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-];
+]
 ```
 
 ---
@@ -401,6 +417,7 @@ Currently, the frontend has no authentication implemented (as per your requireme
 ### Option 1: JWT Tokens (Recommended)
 
 1. **Strapi Side:**
+
    - Enable Strapi's built-in authentication
    - Configure JWT settings in `config/plugins.js`
 
@@ -470,8 +487,8 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 ```javascript
 // In browser console
 fetch('http://localhost:1337/api/patients')
-  .then(res => res.json())
-  .then(data => console.log(data))
+  .then((res) => res.json())
+  .then((data) => console.log(data))
 ```
 
 If you see the response with patient data, your Strapi is working.
@@ -479,6 +496,7 @@ If you see the response with patient data, your Strapi is working.
 ### Test 2: Check Frontend Console
 
 Open your frontend in the browser and check the console (F12):
+
 - Should show: `[Strapi] Connected to: http://localhost:1337`
 - Or: `[Strapi] Using mock data...` if no URL is configured
 
@@ -495,42 +513,50 @@ Open your frontend in the browser and check the console (F12):
 ### Common Issues
 
 #### Issue 1: CORS Error
+
 ```
 Access to XMLHttpRequest blocked by CORS policy
 ```
 
 **Solution:**
+
 - Check Strapi CORS configuration
 - Ensure frontend URL is in the allowed origins list
 - Restart Strapi after changing config
 
 #### Issue 2: 404 Errors on Endpoints
+
 ```
 GET http://localhost:1337/api/patients 404
 ```
 
 **Solution:**
+
 - Verify collections exist in Strapi
 - Check collection names match exactly (case-sensitive)
 - Ensure API routes are enabled for each collection
 
 #### Issue 3: Data Not Loading (Silent Fail)
+
 ```
 Console shows: [Strapi] Using mock data...
 ```
 
 **Solution:**
+
 - Check Network tab (F12) - are API calls being made?
 - Verify `VITE_STRAPI_URL` is set correctly
 - Check browser console for error messages
 - Ensure Strapi server is running
 
 #### Issue 4: Token/Auth Errors
+
 ```
 401 Unauthorized
 ```
 
 **Solution:**
+
 - Implement authentication when ready
 - Store and send auth tokens in request headers
 - Check Strapi user permissions for API access
@@ -553,11 +579,12 @@ These logs help you understand which mode the app is in and identify issues.
 
 ## Environment Variables Reference
 
-| Variable | Type | Default | Usage |
-|----------|------|---------|-------|
-| `VITE_STRAPI_URL` | String | (none) | Base URL of your Strapi server |
+| Variable          | Type   | Default | Usage                          |
+| ----------------- | ------ | ------- | ------------------------------ |
+| `VITE_STRAPI_URL` | String | (none)  | Base URL of your Strapi server |
 
 **Example Values:**
+
 - Development: `http://localhost:1337`
 - Production: `https://strapi.yourdomain.com`
 - With port: `http://api.example.com:1337`
@@ -569,12 +596,14 @@ These logs help you understand which mode the app is in and identify issues.
 All operations are in `src/api/strapiService.ts`:
 
 ### Doctor Operations
+
 ```typescript
 getDoctor(): Promise<Doctor>
 updateDoctor(doctor: Doctor): Promise<Doctor>
 ```
 
 ### Patient Operations
+
 ```typescript
 getPatients(): Promise<Patient[]>
 addPatient(patient: Omit<Patient, 'id'>): Promise<Patient>
@@ -583,6 +612,7 @@ deletePatient(id: string): Promise<void>
 ```
 
 ### Exercise Operations
+
 ```typescript
 getExercises(): Promise<Exercise[]>
 addExercise(exercise: Omit<Exercise, 'id'>): Promise<Exercise>
@@ -591,6 +621,7 @@ deleteExercise(id: string): Promise<void>
 ```
 
 ### Plan Operations
+
 ```typescript
 getPlans(): Promise<Plan[]>
 addPlan(plan: Omit<Plan, 'id' | 'createdAt' | 'updatedAt'>): Promise<Plan>
