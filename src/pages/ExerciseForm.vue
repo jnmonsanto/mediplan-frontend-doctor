@@ -51,40 +51,9 @@
           />
         </div>
 
-        <!-- Duration, Reps, Sets -->
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div>
-            <label class="block text-sm font-medium text-neutral-700">Duration (minutes) *</label>
-            <input
-              v-model.number="formData.duration"
-              type="number"
-              required
-              min="1"
-              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="5"
-            />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-neutral-700">Default Reps</label>
-            <input
-              v-model.number="formData.reps"
-              type="number"
-              min="1"
-              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="10"
-            />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-neutral-700">Default Sets</label>
-            <input
-              v-model.number="formData.sets"
-              type="number"
-              min="1"
-              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="3"
-            />
-          </div>
-        </div>
+        <p class="text-sm text-neutral-500 bg-blue-50 border border-blue-200 rounded-lg p-3">
+          💡 <strong>Note:</strong> Sets, repetitions, and duration are configured per patient when creating or editing plans.
+        </p>
 
         <!-- JSON Data (Optional for backwards compatibility) -->
         <div>
