@@ -308,7 +308,6 @@ Exercise plans created by a doctor and assigned to patients.
 - `patient` (object, populated) - Full patient details
 - `title` (string) - Plan title
 - `description` (string) - Plan description
-- `duration` (number) - Total duration in minutes
 - `difficulty` (enum) - One of: "beginner", "intermediate", "advanced"
 - `exercises` (array) - Array of PlanExercise objects with exerciseId, sets, repetitions, duration, and populated exercise details
 - `score` (number) - Doctor's assigned score (0-10)
@@ -317,6 +316,8 @@ Exercise plans created by a doctor and assigned to patients.
 - `imageUrl` (string, optional) - Plan thumbnail image
 - `createdAt` (timestamp) - When plan was created
 - `updatedAt` (timestamp) - When plan was last updated
+
+**Note:** Plan duration is calculated as the sum of all exercise durations in the `exercises` array.
 
 **Strapi API Endpoints:**
 
