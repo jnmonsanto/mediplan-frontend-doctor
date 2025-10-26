@@ -15,6 +15,8 @@ export interface Patient {
   doctor?: Doctor
   name: string
   email: string
+  phone?: string
+  address?: string
   photo?: string
   snsId: string
 }
