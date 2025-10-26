@@ -247,15 +247,24 @@ DELETE /api/exercises/:id         // Delete an exercise
 
 ### Collection: `plans`
 
-Exercise plans assigned to patients.
+Exercise plans created by a doctor and assigned to patients.
 
 **Fields:**
 
 ```json
 {
   "id": "1",
+  "doctorId": "1",
+  "doctor": {                          // Populated relation
+    "id": "1",
+    "name": "Dr. Smith",
+    "email": "smith@clinic.com",
+    "photo": "https://...",
+    "specialization": "Orthopedic",
+    "age": 45
+  },
   "patientId": "1",
-  "patient": {                     // Populated relation
+  "patient": {                         // Populated relation
     "id": "1",
     "name": "John Doe",
     "email": "john@example.com",
@@ -268,8 +277,17 @@ Exercise plans assigned to patients.
   "difficulty": "intermediate",
   "exercises": [
     {
+      "doctorId": "1",
+      "doctor": {                      // Populated relation
+        "id": "1",
+        "name": "Dr. Smith",
+        "email": "smith@clinic.com",
+        "photo": "https://...",
+        "specialization": "Orthopedic",
+        "age": 45
+      },
       "exerciseId": "1",
-      "exercise": {                // Populated relation
+      "exercise": {                    // Populated relation
         "id": "1",
         "name": "Push-ups",
         "description": "A classic upper body exercise...",
@@ -292,13 +310,15 @@ Exercise plans assigned to patients.
 **Field Descriptions:**
 
 - `id` (string) - Unique identifier
+- `doctorId` (string) - Foreign key to doctor
+- `doctor` (object, populated) - Full doctor details
 - `patientId` (string) - Foreign key to patient
 - `patient` (object, populated) - Full patient details
 - `title` (string) - Plan title
 - `description` (string) - Plan description
 - `duration` (number) - Total duration in minutes
 - `difficulty` (enum) - One of: "beginner", "intermediate", "advanced"
-- `exercises` (array) - Array of PlanExercise objects with exerciseId, sets, repetitions, duration, and populated exercise details
+- `exercises` (array) - Array of PlanExercise objects with doctorId, exerciseId, sets, repetitions, duration, and populated doctor and exercise details
 - `score` (number) - Doctor's assigned score (0-10)
 - `rating` (number) - Doctor's rating (1-5 stars)
 - `videoUrl` (string, optional) - Link to instructional video
