@@ -90,8 +90,8 @@ export const mockPlans: Plan[] = [
     duration: 45,
     difficulty: 'advanced',
     exercises: [
-      { doctorId: '1', doctor: mockDoctor, exerciseId: '2', sets: 4, repetitions: 20, duration: 10, exercise: mockExercises[1] },
-      { doctorId: '1', doctor: mockDoctor, exerciseId: '3', sets: 3, repetitions: 30, duration: 12, exercise: mockExercises[2] },
+      { exerciseId: '2', sets: 4, repetitions: 20, duration: 10, exercise: mockExercises[1] },
+      { exerciseId: '3', sets: 3, repetitions: 30, duration: 12, exercise: mockExercises[2] },
     ],
     score: 9,
     rating: 5,
