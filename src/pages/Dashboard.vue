@@ -113,7 +113,7 @@
                     </p>
                     <div class="flex gap-4 mt-2 text-sm text-neutral-600">
                       <span>👤 {{ plan.patient?.name || 'Unknown Patient' }}</span>
-                      <span>⏱️ {{ plan.duration }} min</span>
+                      <span>⏱️ {{ calculatePlanDuration(plan) }} min</span>
                       <span>📊 {{ plan.difficulty }}</span>
                     </div>
                     <p class="text-xs text-neutral-500 mt-2">
