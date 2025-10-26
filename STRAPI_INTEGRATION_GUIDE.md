@@ -229,6 +229,8 @@ Library of available exercises created by the doctor.
     "id": "1",
     "name": "Dr. Smith",
     "email": "smith@clinic.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Medical Center Drive, Suite 100, Springfield, IL 62701",
     "photo": "https://...",
     "specialization": "Orthopedic",
     "age": 45
@@ -463,7 +465,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 └────────┬────────┘
          │
          ▼
-┌─────────────────────┐
+┌────────��────────────┐
 │  useAppData()       │ (src/composables/useAppData.ts)
 │  Composable         │ - Manages reactive state
 │                     │ - Coordinates API calls
