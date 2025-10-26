@@ -27,8 +27,6 @@ export interface Exercise {
 }
 
 export interface PlanExercise {
-  doctorId: string
-  doctor?: Doctor
   exerciseId: string
   sets: number
   repetitions: number
