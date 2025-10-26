@@ -166,7 +166,7 @@
 
           <!-- Add Exercise -->
           <div class="rounded-lg border border-neutral-300 p-4">
-            <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-5">
               <select
                 v-model="newExercise.exerciseId"
                 class="rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
@@ -185,22 +185,29 @@
                 class="rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
               />
 
-              <div class="flex gap-2">
-                <input
-                  v-model.number="newExercise.repetitions"
-                  type="number"
-                  placeholder="Reps"
-                  min="1"
-                  class="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-                />
-                <button
-                  type="button"
-                  @click="addExercise"
-                  class="rounded-lg bg-secondary-600 px-4 py-2 text-white transition-colors hover:bg-secondary-700 font-medium"
-                >
-                  Add
-                </button>
-              </div>
+              <input
+                v-model.number="newExercise.repetitions"
+                type="number"
+                placeholder="Reps"
+                min="1"
+                class="rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              />
+
+              <input
+                v-model.number="newExercise.duration"
+                type="number"
+                placeholder="Duration (min)"
+                min="1"
+                class="rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              />
+
+              <button
+                type="button"
+                @click="addExercise"
+                class="rounded-lg bg-secondary-600 px-4 py-2 text-white transition-colors hover:bg-secondary-700 font-medium"
+              >
+                Add
+              </button>
             </div>
           </div>
         </div>
