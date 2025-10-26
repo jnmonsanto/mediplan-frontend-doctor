@@ -42,6 +42,82 @@
           </select>
         </div>
 
+        <!-- Title -->
+        <div>
+          <label class="block text-sm font-medium text-neutral-700">Plan Title *</label>
+          <input
+            v-model="formData.title"
+            type="text"
+            required
+            class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+            placeholder="e.g., Upper Body Strength Training"
+          />
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label class="block text-sm font-medium text-neutral-700">Description *</label>
+          <textarea
+            v-model="formData.description"
+            required
+            rows="3"
+            class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+            placeholder="Describe the plan and its goals..."
+          />
+        </div>
+
+        <!-- Duration & Difficulty -->
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div>
+            <label class="block text-sm font-medium text-neutral-700">Duration (minutes) *</label>
+            <input
+              v-model.number="formData.duration"
+              type="number"
+              required
+              min="1"
+              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="30"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-neutral-700">Difficulty *</label>
+            <select
+              v-model="formData.difficulty"
+              required
+              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+            >
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Video URL -->
+        <div>
+          <label class="block text-sm font-medium text-neutral-700">Video URL</label>
+          <input
+            v-model="formData.videoUrl"
+            type="url"
+            class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+            placeholder="https://example.com/video.mp4"
+          />
+        </div>
+
+        <!-- Image URL -->
+        <div>
+          <label class="block text-sm font-medium text-neutral-700">Image URL</label>
+          <input
+            v-model="formData.imageUrl"
+            type="url"
+            class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+            placeholder="https://example.com/image.jpg"
+          />
+          <div v-if="formData.imageUrl" class="mt-4 flex justify-center">
+            <img :src="formData.imageUrl" :alt="formData.title" class="max-h-48 rounded-lg object-cover" />
+          </div>
+        </div>
+
         <!-- Exercises Section -->
         <div>
           <label class="block text-sm font-medium text-neutral-700 mb-4">Exercises</label>
