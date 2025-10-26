@@ -277,15 +277,6 @@ Exercise plans created by a doctor and assigned to patients.
   "difficulty": "intermediate",
   "exercises": [
     {
-      "doctorId": "1",
-      "doctor": {                      // Populated relation
-        "id": "1",
-        "name": "Dr. Smith",
-        "email": "smith@clinic.com",
-        "photo": "https://...",
-        "specialization": "Orthopedic",
-        "age": 45
-      },
       "exerciseId": "1",
       "exercise": {                    // Populated relation
         "id": "1",
