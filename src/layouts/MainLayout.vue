@@ -25,7 +25,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="transition-all duration-300" :class="isMenuOpen ? 'ml-64' : ''">
+    <main>
       <slot />
     </main>
 
