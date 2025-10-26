@@ -200,13 +200,22 @@ DELETE /api/patients/:id          // Delete a patient
 
 ### Collection: `exercises`
 
-Library of available exercises.
+Library of available exercises created by the doctor.
 
 **Fields:**
 
 ```json
 {
   "id": "1",
+  "doctorId": "1",
+  "doctor": {                          // Populated relation
+    "id": "1",
+    "name": "Dr. Smith",
+    "email": "smith@clinic.com",
+    "photo": "https://...",
+    "specialization": "Orthopedic",
+    "age": 45
+  },
   "name": "Push-ups",
   "description": "A classic upper body exercise that strengthens chest, shoulders, and triceps.",
   "jsonData": {
