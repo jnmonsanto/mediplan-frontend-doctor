@@ -156,13 +156,25 @@ Library of available exercises.
 {
   "id": "1",
   "name": "Push-ups",
+  "description": "A classic upper body exercise that strengthens chest, shoulders, and triceps.",
+  "duration": 5,
+  "reps": 10,
+  "sets": 3,
   "jsonData": {
     "difficulty": "medium",
-    "duration": 5,
-    "instructions": "..."
+    "instructions": "Keep your body straight..."
   }
 }
 ```
+
+**Field Descriptions:**
+- `id` (string) - Unique identifier
+- `name` (string) - Exercise name
+- `description` (string) - Detailed description of the exercise
+- `duration` (number) - Typical duration in minutes
+- `reps` (number, optional) - Default number of repetitions
+- `sets` (number, optional) - Default number of sets
+- `jsonData` (object, optional) - Additional JSON configuration
 
 **Strapi API Endpoints:**
 
@@ -349,7 +361,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
          ▼
 ┌──────────────────────┐
 │ strapiService        │ (src/api/strapiService.ts)
-│ - Makes API calls    │ - Handles Strapi responses
+│ - Makes API calls    ��� - Handles Strapi responses
 │ - Manages errors     │ - Falls back to mock data
 │ - Logs status        │
 └────────┬─────────────┘
