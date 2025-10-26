@@ -131,7 +131,7 @@
                   {{ exercise.exercise?.name || 'Unknown' }}
                 </p>
                 <p class="text-sm text-neutral-600">
-                  {{ exercise.sets }} sets × {{ exercise.repetitions }} reps
+                  {{ exercise.sets }} sets × {{ exercise.repetitions }} reps · {{ exercise.duration }} min
                 </p>
               </div>
               <button
