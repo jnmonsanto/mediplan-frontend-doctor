@@ -171,6 +171,15 @@ List of patients managed by the doctor.
 ```json
 {
   "id": "1",
+  "doctorId": "1",
+  "doctor": {                          // Populated relation
+    "id": "1",
+    "name": "Dr. Smith",
+    "email": "smith@clinic.com",
+    "photo": "https://...",
+    "specialization": "Orthopedic",
+    "age": 45
+  },
   "name": "John Doe",
   "email": "john@example.com",
   "photo": "https://...", // URL to image
