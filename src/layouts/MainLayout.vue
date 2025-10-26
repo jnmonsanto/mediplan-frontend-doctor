@@ -38,6 +38,5 @@
 import { ref } from 'vue'
 import ProfileModal from '../components/ProfileModal.vue'
 
-const isMenuOpen = ref(false)
 const showProfileModal = ref(false)
 </script>
