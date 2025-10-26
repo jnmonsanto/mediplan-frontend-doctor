@@ -18,6 +18,10 @@ export interface Patient {
 export interface Exercise {
   id: string
   name: string
+  description: string
+  duration: number
+  reps?: number
+  sets?: number
   jsonData?: Record<string, unknown>
 }
 
@@ -32,9 +36,15 @@ export interface Plan {
   id: string
   patientId: string
   patient?: Patient
+  title: string
+  description: string
+  duration: number
+  difficulty: 'beginner' | 'intermediate' | 'advanced'
   exercises: PlanExercise[]
   score: number
   rating: number
+  videoUrl: string
+  imageUrl: string
   createdAt: Date
   updatedAt: Date
 }
