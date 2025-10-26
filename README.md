@@ -2,6 +2,34 @@
 
 A production-ready Vue 3 + TypeScript + TailwindCSS frontend application for managing exercise plans, patients, and exercises. Built to consume data from a Strapi backend.
 
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Navigation](#navigation)
+- [Screenshots](#screenshots)
+- [Strapi Integration Guide](#strapi-integration-guide)
+  - [Overview](#overview)
+  - [Quick Start](#quick-start-1)
+  - [Detailed Setup Instructions](#detailed-setup-instructions)
+  - [Strapi Collection Structure](#strapi-collection-structure)
+  - [Strapi Response Format](#strapi-response-format)
+  - [CORS Configuration](#cors-configuration)
+  - [Authentication Setup](#authentication-setup)
+  - [Data Flow Diagram](#data-flow-diagram)
+  - [Testing the Integration](#testing-the-integration)
+  - [Debugging](#debugging)
+  - [Console Logging](#console-logging)
+  - [Environment Variables Reference](#environment-variables-reference)
+  - [API Service Reference](#api-service-reference)
+  - [Mock Data Fallback](#mock-data-fallback)
+  - [Next Steps](#next-steps)
+- [Recommended IDE Setup](#recommended-ide-setup)
+- [Type Support for .vue Imports in TS](#type-support-for-vue-imports-in-ts)
+- [License](#license)
+
 ## Features
 
 - 📋 **Dashboard** - Unified view to manage Plans, Patients, and Exercises
