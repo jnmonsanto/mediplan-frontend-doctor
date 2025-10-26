@@ -285,6 +285,7 @@ Library of available exercises.
 ```
 
 **Field Descriptions:**
+
 - `id` (string) - Unique identifier
 - `name` (string) - Exercise name
 - `description` (string) - Detailed description of the exercise
@@ -351,6 +352,7 @@ Exercise plans assigned to patients.
 ```
 
 **Field Descriptions:**
+
 - `id` (string) - Unique identifier
 - `patientId` (string) - Foreign key to patient
 - `patient` (object, populated) - Full patient details

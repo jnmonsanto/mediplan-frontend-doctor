@@ -114,7 +114,11 @@
             placeholder="https://example.com/image.jpg"
           />
           <div v-if="formData.imageUrl" class="mt-4 flex justify-center">
-            <img :src="formData.imageUrl" :alt="formData.title" class="max-h-48 rounded-lg object-cover" />
+            <img
+              :src="formData.imageUrl"
+              :alt="formData.title"
+              class="max-h-48 rounded-lg object-cover"
+            />
           </div>
         </div>
 

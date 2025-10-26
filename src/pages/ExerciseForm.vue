@@ -104,9 +104,14 @@
         </div>
 
         <!-- Preview -->
-        <div v-if="formData.jsonData" class="rounded-lg bg-neutral-50 p-4 border border-neutral-200">
+        <div
+          v-if="formData.jsonData"
+          class="rounded-lg bg-neutral-50 p-4 border border-neutral-200"
+        >
           <p class="text-sm font-medium text-neutral-700 mb-3">JSON Preview:</p>
-          <pre class="text-xs text-neutral-600 overflow-auto">{{ JSON.stringify(formData.jsonData, null, 2) }}</pre>
+          <pre class="text-xs text-neutral-600 overflow-auto">{{
+            JSON.stringify(formData.jsonData, null, 2)
+          }}</pre>
         </div>
 
         <!-- Form Actions -->
@@ -170,7 +175,7 @@ watch(
     } else {
       formData.value.jsonData = {}
     }
-  }
+  },
 )
 
 onMounted(() => {
