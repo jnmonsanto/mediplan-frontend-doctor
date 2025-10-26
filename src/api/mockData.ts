@@ -12,6 +12,8 @@ export const mockDoctor: Doctor = {
 export const mockPatients: Patient[] = [
   {
     id: '1',
+    doctorId: '1',
+    doctor: mockDoctor,
     name: 'John Doe',
     email: 'john@example.com',
     photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
@@ -19,6 +21,8 @@ export const mockPatients: Patient[] = [
   },
   {
     id: '2',
+    doctorId: '1',
+    doctor: mockDoctor,
     name: 'Jane Smith',
     email: 'jane@example.com',
     photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
