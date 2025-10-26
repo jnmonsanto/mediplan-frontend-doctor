@@ -30,16 +30,28 @@ export const mockExercises: Exercise[] = [
   {
     id: '1',
     name: 'Push-ups',
+    description: 'A classic upper body exercise that strengthens chest, shoulders, and triceps.',
+    duration: 5,
+    reps: 10,
+    sets: 3,
     jsonData: { difficulty: 'medium', duration: 5 },
   },
   {
     id: '2',
     name: 'Squats',
+    description: 'A fundamental lower body exercise targeting quadriceps, hamstrings, and glutes.',
+    duration: 5,
+    reps: 15,
+    sets: 3,
     jsonData: { difficulty: 'medium', duration: 5 },
   },
   {
     id: '3',
     name: 'Planks',
+    description: 'Core strengthening exercise that improves stability and endurance.',
+    duration: 10,
+    reps: 30,
+    sets: 3,
     jsonData: { difficulty: 'hard', duration: 10 },
   },
 ]
