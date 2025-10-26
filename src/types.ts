@@ -42,7 +42,6 @@ export interface Plan {
   patient?: Patient
   title: string
   description: string
-  duration: number
   difficulty: 'beginner' | 'intermediate' | 'advanced'
   exercises: PlanExercise[]
   score: number
