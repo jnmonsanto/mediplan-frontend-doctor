@@ -275,7 +275,6 @@ Exercise plans created by a doctor and assigned to patients.
   },
   "title": "Upper Body Strength Training",
   "description": "A comprehensive upper body workout plan focusing on chest, shoulders, and arms.",
-  "duration": 30,
   "difficulty": "intermediate",
   "exercises": [
     {
