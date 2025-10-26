@@ -1,20 +1,20 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { strapiService } from '../api/strapiService'
 import type { Plan, Patient, Exercise, Doctor } from '../types'
 
-// Initialize with mock data
-let doctorData: Doctor | null = null
-let patientsData: Patient[] = []
-let exercisesData: Exercise[] = []
-let plansData: Plan[] = []
+// Reactive references - initialized from Strapi service
+const doctor = ref<Doctor | null>(null)
+const patients = ref<Patient[]>([])
+const exercises = ref<Exercise[]>([])
+const plans = ref<Plan[]>([])
 
 // Load initial data
 async function initializeData() {
   try {
-    doctorData = await strapiService.getDoctor()
-    patientsData = await strapiService.getPatients()
-    exercisesData = await strapiService.getExercises()
-    plansData = await strapiService.getPlans()
+    doctor.value = await strapiService.getDoctor()
+    patients.value = await strapiService.getPatients()
+    exercises.value = await strapiService.getExercises()
+    plans.value = await strapiService.getPlans()
   } catch (error) {
     console.error('Error initializing data:', error)
   }
@@ -22,12 +22,6 @@ async function initializeData() {
 
 // Initialize on module load
 initializeData()
-
-// Reactive references
-const doctor = ref<Doctor | null>(doctorData)
-const patients = ref<Patient[]>(patientsData)
-const exercises = ref<Exercise[]>(exercisesData)
-const plans = ref<Plan[]>(plansData)
 
 export function useAppData() {
   // Doctor
