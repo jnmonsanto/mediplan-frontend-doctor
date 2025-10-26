@@ -164,7 +164,13 @@ const exercises = computed(() => getExercises())
 const formData = ref<Omit<Plan, 'id' | 'createdAt' | 'updatedAt' | 'score' | 'rating'>>({
   patientId: '',
   patient: undefined,
+  title: '',
+  description: '',
+  duration: 30,
+  difficulty: 'beginner',
   exercises: [],
+  videoUrl: '',
+  imageUrl: '',
 })
 
 const newExercise = ref<PlanExercise>({
