@@ -104,11 +104,19 @@
               <!-- Plan Details -->
               <div class="flex-1">
                 <div class="flex items-start justify-between">
-                  <div>
+                  <div class="flex-1">
                     <h3 class="text-lg font-semibold text-neutral-900">
-                      {{ plan.patient?.name || 'Unknown Patient' }}
+                      {{ plan.title }}
                     </h3>
-                    <p class="text-sm text-neutral-500">
+                    <p class="text-sm text-neutral-600 mt-1">
+                      {{ plan.description }}
+                    </p>
+                    <div class="flex gap-4 mt-2 text-sm text-neutral-600">
+                      <span>👤 {{ plan.patient?.name || 'Unknown Patient' }}</span>
+                      <span>⏱️ {{ plan.duration }} min</span>
+                      <span>📊 {{ plan.difficulty }}</span>
+                    </div>
+                    <p class="text-xs text-neutral-500 mt-2">
                       {{ formatDate(plan.createdAt) }}
                     </p>
                   </div>
