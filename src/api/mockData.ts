@@ -66,7 +66,6 @@ export const mockPlans: Plan[] = [
     patient: mockPatients[0],
     title: 'Upper Body Strength Training',
     description: 'A comprehensive upper body workout plan focusing on chest, shoulders, and arms.',
-    duration: 30,
     difficulty: 'intermediate',
     exercises: [
       { exerciseId: '1', sets: 3, repetitions: 10, duration: 5, exercise: mockExercises[0] },
