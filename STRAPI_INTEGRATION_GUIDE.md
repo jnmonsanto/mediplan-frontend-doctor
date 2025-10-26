@@ -190,6 +190,8 @@ List of patients managed by the doctor.
     "id": "1",
     "name": "Dr. Smith",
     "email": "smith@clinic.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Medical Center Drive, Suite 100, Springfield, IL 62701",
     "photo": "https://...",
     "specialization": "Orthopedic",
     "age": 45
