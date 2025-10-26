@@ -405,7 +405,8 @@
             <div class="flex items-start justify-between">
               <div class="flex-1">
                 <h3 class="text-lg font-semibold text-neutral-900">{{ exercise.name }}</h3>
-                <p class="text-sm text-neutral-600 mt-1">ID: {{ exercise.id }}</p>
+                <p class="text-sm text-neutral-600 mt-1">{{ exercise.description }}</p>
+                <p class="text-xs text-neutral-500 mt-2">ID: {{ exercise.id }}</p>
                 <div v-if="exercise.jsonData" class="mt-4 rounded-lg bg-neutral-50 p-3">
                   <p class="text-xs font-medium text-neutral-700 mb-2">JSON Data:</p>
                   <pre class="text-xs text-neutral-600 overflow-auto max-h-40">{{
