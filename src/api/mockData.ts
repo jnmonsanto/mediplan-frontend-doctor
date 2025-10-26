@@ -1,0 +1,74 @@
+import type { Doctor, Patient, Exercise, Plan } from '../types'
+
+export const mockDoctor: Doctor = {
+  id: '1',
+  name: 'Dr. Smith',
+  email: 'smith@clinic.com',
+  photo: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop',
+  specialization: 'Orthopedic',
+  age: 45,
+}
+
+export const mockPatients: Patient[] = [
+  {
+    id: '1',
+    name: 'John Doe',
+    email: 'john@example.com',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    snsId: 'SNS123456',
+  },
+  {
+    id: '2',
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    snsId: 'SNS789012',
+  },
+]
+
+export const mockExercises: Exercise[] = [
+  {
+    id: '1',
+    name: 'Push-ups',
+    jsonData: { difficulty: 'medium', duration: 5 },
+  },
+  {
+    id: '2',
+    name: 'Squats',
+    jsonData: { difficulty: 'medium', duration: 5 },
+  },
+  {
+    id: '3',
+    name: 'Planks',
+    jsonData: { difficulty: 'hard', duration: 10 },
+  },
+]
+
+export const mockPlans: Plan[] = [
+  {
+    id: '1',
+    patientId: '1',
+    patient: mockPatients[0],
+    exercises: [
+      { exerciseId: '1', sets: 3, repetitions: 10, exercise: mockExercises[0] },
+      { exerciseId: '2', sets: 3, repetitions: 15, exercise: mockExercises[1] },
+    ],
+    score: 8.5,
+    rating: 4,
+    createdAt: new Date('2024-01-15'),
+    updatedAt: new Date('2024-01-15'),
+  },
+  {
+    id: '2',
+    patientId: '2',
+    patient: mockPatients[1],
+    exercises: [
+      { exerciseId: '2', sets: 4, repetitions: 20, exercise: mockExercises[1] },
+      { exerciseId: '3', sets: 3, repetitions: 30, exercise: mockExercises[2] },
+    ],
+    score: 9,
+    rating: 5,
+    createdAt: new Date('2024-01-10'),
+    updatedAt: new Date('2024-01-10'),
+  },
+]
