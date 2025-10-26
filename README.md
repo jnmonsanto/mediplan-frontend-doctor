@@ -9,7 +9,7 @@ A production-ready Vue 3 + TypeScript + TailwindCSS frontend application for man
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
 - [Navigation](#navigation)
-- [Screenshots](#screenshots)
+- [Live Preview](#live-preview)
 - [Strapi Integration Guide](#strapi-integration-guide)
   - [Overview](#overview)
   - [Quick Start](#quick-start-1)
@@ -36,7 +36,7 @@ A production-ready Vue 3 + TypeScript + TailwindCSS frontend application for man
 - 👥 **Patient Management** - Add, edit, delete patients with full details
 - 💪 **Exercise Library** - Manage exercise database with JSON configuration
 - 📊 **Plan Management** - Create and assign exercise plans to patients with sets and reps
-- 👨‍⚕️ **Doctor Profile** - View and edit doctor information
+- 👨‍⚕�� **Doctor Profile** - View and edit doctor information
 - 🔍 **Search & Filtering** - Full-text search and sort options on all lists
 - 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
 - 🎨 **Modern UI** - Beautiful design with Tailwind CSS and custom color scheme
