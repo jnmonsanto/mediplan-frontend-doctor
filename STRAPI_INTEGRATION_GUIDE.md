@@ -309,7 +309,7 @@ Exercise plans created by a doctor and assigned to patients.
 - `description` (string) - Plan description
 - `duration` (number) - Total duration in minutes
 - `difficulty` (enum) - One of: "beginner", "intermediate", "advanced"
-- `exercises` (array) - Array of PlanExercise objects with doctorId, exerciseId, sets, repetitions, duration, and populated doctor and exercise details
+- `exercises` (array) - Array of PlanExercise objects with exerciseId, sets, repetitions, duration, and populated exercise details
 - `score` (number) - Doctor's assigned score (0-10)
 - `rating` (number) - Doctor's rating (1-5 stars)
 - `videoUrl` (string, optional) - Link to instructional video
