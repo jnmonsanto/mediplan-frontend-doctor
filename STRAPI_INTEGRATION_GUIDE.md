@@ -172,7 +172,8 @@ List of patients managed by the doctor.
 {
   "id": "1",
   "doctorId": "1",
-  "doctor": {                          // Populated relation
+  "doctor": {
+    // Populated relation
     "id": "1",
     "name": "Dr. Smith",
     "email": "smith@clinic.com",
@@ -208,7 +209,8 @@ Library of available exercises created by the doctor.
 {
   "id": "1",
   "doctorId": "1",
-  "doctor": {                          // Populated relation
+  "doctor": {
+    // Populated relation
     "id": "1",
     "name": "Dr. Smith",
     "email": "smith@clinic.com",
