@@ -204,12 +204,20 @@ Exercise plans assigned to patients.
     "photo": "https://...",
     "snsId": "SNS123456"
   },
+  "title": "Upper Body Strength Training",
+  "description": "A comprehensive upper body workout plan focusing on chest, shoulders, and arms.",
+  "duration": 30,
+  "difficulty": "intermediate",
   "exercises": [
     {
       "exerciseId": "1",
       "exercise": {                // Populated relation
         "id": "1",
         "name": "Push-ups",
+        "description": "A classic upper body exercise...",
+        "duration": 5,
+        "reps": 10,
+        "sets": 3,
         "jsonData": { ... }
       },
       "sets": 3,
@@ -218,10 +226,28 @@ Exercise plans assigned to patients.
   ],
   "score": 8.5,
   "rating": 4,
+  "videoUrl": "https://example.com/videos/upper-body.mp4",
+  "imageUrl": "https://example.com/images/upper-body.jpg",
   "createdAt": "2024-01-15T10:00:00Z",
   "updatedAt": "2024-01-15T10:00:00Z"
 }
 ```
+
+**Field Descriptions:**
+- `id` (string) - Unique identifier
+- `patientId` (string) - Foreign key to patient
+- `patient` (object, populated) - Full patient details
+- `title` (string) - Plan title
+- `description` (string) - Plan description
+- `duration` (number) - Total duration in minutes
+- `difficulty` (enum) - One of: "beginner", "intermediate", "advanced"
+- `exercises` (array) - Array of exercise objects with sets and reps
+- `score` (number) - Doctor's assigned score (0-10)
+- `rating` (number) - Doctor's rating (1-5 stars)
+- `videoUrl` (string, optional) - Link to instructional video
+- `imageUrl` (string, optional) - Plan thumbnail image
+- `createdAt` (timestamp) - When plan was created
+- `updatedAt` (timestamp) - When plan was last updated
 
 **Strapi API Endpoints:**
 
@@ -364,7 +390,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 │ - Makes API calls    ��� - Handles Strapi responses
 │ - Manages errors     │ - Falls back to mock data
 │ - Logs status        │
-└────────┬─────────────┘
+└────────��─────────────┘
          │
          ▼
     ┌────────┐
