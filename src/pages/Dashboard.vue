@@ -566,7 +566,7 @@ const formatDate = (date: Date) => {
   })
 }
 
-const calculatePlanDuration = (plan: ReturnType<typeof getPlans>[number]) => {
+const calculatePlanDuration = (plan: Plan) => {
   return plan.exercises.reduce((total, exercise) => total + exercise.duration, 0)
 }
 
