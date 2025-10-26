@@ -131,7 +131,8 @@
                   {{ exercise.exercise?.name || 'Unknown' }}
                 </p>
                 <p class="text-sm text-neutral-600">
-                  {{ exercise.sets }} sets × {{ exercise.repetitions }} reps · {{ exercise.duration }} min
+                  {{ exercise.sets }} sets × {{ exercise.repetitions }} reps ·
+                  {{ exercise.duration }} min
                 </p>
               </div>
               <button
@@ -180,7 +181,9 @@
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-neutral-700 mb-2">Repetitions *</label>
+                  <label class="block text-sm font-medium text-neutral-700 mb-2"
+                    >Repetitions *</label
+                  >
                   <input
                     v-model.number="newExercise.repetitions"
                     type="number"
@@ -191,7 +194,9 @@
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-neutral-700 mb-2">Duration (min) *</label>
+                  <label class="block text-sm font-medium text-neutral-700 mb-2"
+                    >Duration (min) *</label
+                  >
                   <input
                     v-model.number="newExercise.duration"
                     type="number"
