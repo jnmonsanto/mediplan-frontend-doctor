@@ -157,9 +157,6 @@ Library of available exercises.
   "id": "1",
   "name": "Push-ups",
   "description": "A classic upper body exercise that strengthens chest, shoulders, and triceps.",
-  "duration": 5,
-  "reps": 10,
-  "sets": 3,
   "jsonData": {
     "difficulty": "medium",
     "instructions": "Keep your body straight..."
