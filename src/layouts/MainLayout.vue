@@ -20,7 +20,7 @@
         </button>
 
         <!-- Logo/Title -->
-        <h1 class="text-xl font-bold text-primary-600">MediPlan</h1>
+        <h1 class="text-xl font-semibold text-primary-600">MediPlan</h1>
 
         <!-- Profile Button -->
         <button
