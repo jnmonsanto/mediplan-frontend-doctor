@@ -172,10 +172,9 @@ Library of available exercises.
 - `id` (string) - Unique identifier
 - `name` (string) - Exercise name
 - `description` (string) - Detailed description of the exercise
-- `duration` (number) - Typical duration in minutes
-- `reps` (number, optional) - Default number of repetitions
-- `sets` (number, optional) - Default number of sets
 - `jsonData` (object, optional) - Additional JSON configuration
+
+**Note:** Sets, repetitions, and duration are configured per-patient when creating exercise plans via PlanExercise objects (see Plans collection).
 
 **Strapi API Endpoints:**
 
