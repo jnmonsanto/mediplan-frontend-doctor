@@ -136,8 +136,8 @@ const formData = ref<Doctor>(
   }
 )
 
-const handleSave = () => {
-  updateDoctor(formData.value)
+const handleSave = async () => {
+  await updateDoctor(formData.value)
   emit('close')
 }
 </script>
