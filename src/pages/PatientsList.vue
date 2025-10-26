@@ -92,7 +92,9 @@
                   <h3 class="text-lg font-semibold text-neutral-900">{{ patient.name }}</h3>
                   <p class="text-sm text-neutral-600">{{ patient.email }}</p>
                   <p v-if="patient.phone" class="text-sm text-neutral-600">{{ patient.phone }}</p>
-                  <p v-if="patient.address" class="text-sm text-neutral-600 mt-1">{{ patient.address }}</p>
+                  <p v-if="patient.address" class="text-sm text-neutral-600 mt-1">
+                    {{ patient.address }}
+                  </p>
                   <p class="text-xs text-neutral-500 mt-2">
                     SNS ID: <span class="font-medium text-neutral-700">{{ patient.snsId }}</span>
                   </p>
