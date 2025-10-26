@@ -133,7 +133,7 @@ const formData = ref<Doctor>(
     photo: '',
     specialization: '',
     age: 0,
-  }
+  },
 )
 
 const handleSave = async () => {
