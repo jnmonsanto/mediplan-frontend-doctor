@@ -302,6 +302,7 @@ const addExercise = () => {
       exerciseId: '',
       sets: 1,
       repetitions: 1,
+      duration: 5,
       exercise: undefined,
     }
   }
