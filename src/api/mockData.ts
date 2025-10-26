@@ -60,6 +60,8 @@ export const mockExercises: Exercise[] = [
 export const mockPlans: Plan[] = [
   {
     id: '1',
+    doctorId: '1',
+    doctor: mockDoctor,
     patientId: '1',
     patient: mockPatients[0],
     title: 'Upper Body Strength Training',
@@ -67,8 +69,8 @@ export const mockPlans: Plan[] = [
     duration: 30,
     difficulty: 'intermediate',
     exercises: [
-      { exerciseId: '1', sets: 3, repetitions: 10, duration: 5, exercise: mockExercises[0] },
-      { exerciseId: '2', sets: 3, repetitions: 15, duration: 7, exercise: mockExercises[1] },
+      { doctorId: '1', doctor: mockDoctor, exerciseId: '1', sets: 3, repetitions: 10, duration: 5, exercise: mockExercises[0] },
+      { doctorId: '1', doctor: mockDoctor, exerciseId: '2', sets: 3, repetitions: 15, duration: 7, exercise: mockExercises[1] },
     ],
     score: 8.5,
     rating: 4,
@@ -79,6 +81,8 @@ export const mockPlans: Plan[] = [
   },
   {
     id: '2',
+    doctorId: '1',
+    doctor: mockDoctor,
     patientId: '2',
     patient: mockPatients[1],
     title: 'Core Stability Program',
@@ -86,8 +90,8 @@ export const mockPlans: Plan[] = [
     duration: 45,
     difficulty: 'advanced',
     exercises: [
-      { exerciseId: '2', sets: 4, repetitions: 20, duration: 10, exercise: mockExercises[1] },
-      { exerciseId: '3', sets: 3, repetitions: 30, duration: 12, exercise: mockExercises[2] },
+      { doctorId: '1', doctor: mockDoctor, exerciseId: '2', sets: 4, repetitions: 20, duration: 10, exercise: mockExercises[1] },
+      { doctorId: '1', doctor: mockDoctor, exerciseId: '3', sets: 3, repetitions: 30, duration: 12, exercise: mockExercises[2] },
     ],
     score: 9,
     rating: 5,
