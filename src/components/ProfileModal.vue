@@ -125,9 +125,16 @@ const emit = defineEmits<{
 const { getDoctor, updateDoctor } = useAppData()
 const currentDoctor = getDoctor()
 
-const formData = ref<Doctor>({
-  ...currentDoctor,
-})
+const formData = ref<Doctor>(
+  currentDoctor || {
+    id: '',
+    name: '',
+    email: '',
+    photo: '',
+    specialization: '',
+    age: 0,
+  }
+)
 
 const handleSave = () => {
   updateDoctor(formData.value)
