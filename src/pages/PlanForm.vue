@@ -187,7 +187,13 @@ onMounted(() => {
       formData.value = {
         patientId: plan.patientId,
         patient: plan.patient,
+        title: plan.title,
+        description: plan.description,
+        duration: plan.duration,
+        difficulty: plan.difficulty,
         exercises: [...plan.exercises],
+        videoUrl: plan.videoUrl,
+        imageUrl: plan.imageUrl,
       }
     }
   }
