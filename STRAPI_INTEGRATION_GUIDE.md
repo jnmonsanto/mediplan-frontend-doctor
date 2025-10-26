@@ -198,10 +198,24 @@ List of patients managed by the doctor.
   },
   "name": "John Doe",
   "email": "john@example.com",
+  "phone": "+1 (555) 987-6543",
+  "address": "456 Oak Street, Springfield, IL 62702",
   "photo": "https://...", // URL to image
   "snsId": "SNS123456"
 }
 ```
+
+**Field Descriptions:**
+
+- `id` (string) - Unique identifier
+- `doctorId` (string) - Foreign key to doctor
+- `doctor` (object, populated) - Full doctor details
+- `name` (string) - Patient's full name
+- `email` (string) - Patient's email address
+- `phone` (string, optional) - Patient's phone number
+- `address` (string, optional) - Patient's address
+- `photo` (string, optional) - URL to patient's profile photo
+- `snsId` (string) - Social Security Number or patient ID
 
 **Strapi API Endpoints:**
 
