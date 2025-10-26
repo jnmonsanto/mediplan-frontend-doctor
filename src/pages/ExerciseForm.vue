@@ -52,7 +52,8 @@
         </div>
 
         <p class="text-sm text-neutral-500 bg-blue-50 border border-blue-200 rounded-lg p-3">
-          💡 <strong>Note:</strong> Sets, repetitions, and duration are configured per patient when creating or editing plans.
+          💡 <strong>Note:</strong> Sets, repetitions, and duration are configured per patient when
+          creating or editing plans.
         </p>
 
         <!-- JSON Data (Optional for backwards compatibility) -->
