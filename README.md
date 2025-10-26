@@ -274,9 +274,6 @@ Library of available exercises.
   "id": "1",
   "name": "Push-ups",
   "description": "A classic upper body exercise that strengthens chest, shoulders, and triceps.",
-  "duration": 5,
-  "reps": 10,
-  "sets": 3,
   "jsonData": {
     "difficulty": "medium",
     "instructions": "Keep your body straight..."
@@ -289,10 +286,9 @@ Library of available exercises.
 - `id` (string) - Unique identifier
 - `name` (string) - Exercise name
 - `description` (string) - Detailed description of the exercise
-- `duration` (number) - Typical duration in minutes
-- `reps` (number, optional) - Default number of repetitions
-- `sets` (number, optional) - Default number of sets
 - `jsonData` (object, optional) - Additional JSON configuration
+
+**Note:** Sets, repetitions, and duration are configured per-patient when creating exercise plans via PlanExercise objects (see Plans collection).
 
 **Strapi API Endpoints:**
 
@@ -497,7 +493,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 └────────┬────────┘
          │
          ▼
-┌─────────────────────┐
+┌───��─────────────────┐
 │  useAppData()       │ (src/composables/useAppData.ts)
 │  Composable         │ - Manages reactive state
 │                     │ - Coordinates API calls
