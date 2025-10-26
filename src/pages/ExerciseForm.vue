@@ -122,9 +122,6 @@ const formData = ref<Exercise>({
   id: '',
   name: '',
   description: '',
-  duration: 5,
-  reps: undefined,
-  sets: undefined,
   jsonData: {},
 })
 
