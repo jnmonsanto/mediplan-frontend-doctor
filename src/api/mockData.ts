@@ -86,7 +86,6 @@ export const mockPlans: Plan[] = [
     patient: mockPatients[1],
     title: 'Core Stability Program',
     description: 'An advanced core training regimen designed to build strength and stability.',
-    duration: 45,
     difficulty: 'advanced',
     exercises: [
       { exerciseId: '2', sets: 4, repetitions: 20, duration: 10, exercise: mockExercises[1] },
