@@ -150,6 +150,8 @@ const formData = ref<Doctor>(
     id: '',
     name: '',
     email: '',
+    phone: '',
+    address: '',
     photo: '',
     specialization: '',
     age: 0,
