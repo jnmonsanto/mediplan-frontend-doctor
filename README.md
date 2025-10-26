@@ -36,7 +36,7 @@ A production-ready Vue 3 + TypeScript + TailwindCSS frontend application for man
 - 👥 **Patient Management** - Add, edit, delete patients with full details
 - 💪 **Exercise Library** - Manage exercise database with JSON configuration
 - 📊 **Plan Management** - Create and assign exercise plans to patients with sets and reps
-- 👨‍⚕�� **Doctor Profile** - View and edit doctor information
+- 👨‍⚕️ **Doctor Profile** - View and edit doctor information
 - 🔍 **Search & Filtering** - Full-text search and sort options on all lists
 - 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
 - 🎨 **Modern UI** - Beautiful design with Tailwind CSS and custom color scheme
@@ -141,7 +141,7 @@ The app uses a top-left hamburger menu for navigation:
 
 Top-right profile icon opens doctor profile editor.
 
-## Screenshots
+## Live Preview
 
 ### Dashboard - Plans View
 
@@ -564,7 +564,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 │  useAppData()       │ (src/composables/useAppData.ts)
 │  Composable         │ - Manages reactive state
 │                     │ - Coordinates API calls
-└────────┬────────────┘
+└────────┬──────────���─┘
          │
          ▼
 ┌──────────────────────┐
