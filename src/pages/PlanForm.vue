@@ -264,6 +264,7 @@ const newExercise = ref<PlanExercise>({
   exerciseId: '',
   sets: 1,
   repetitions: 1,
+  duration: 5,
   exercise: undefined,
 })
 
