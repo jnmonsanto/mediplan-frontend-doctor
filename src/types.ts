@@ -38,6 +38,8 @@ export interface PlanExercise {
 
 export interface Plan {
   id: string
+  doctorId: string
+  doctor?: Doctor
   patientId: string
   patient?: Patient
   title: string
