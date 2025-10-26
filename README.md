@@ -98,7 +98,7 @@ src/
 │   └── base.css            # Base styles with Tailwind
 ├── types.ts                # TypeScript type definitions
 ├── router.ts               # Vue Router configuration
-├── main.ts                 # Application entry point
+├─��� main.ts                 # Application entry point
 └── App.vue                 # Root component
 ```
 
@@ -354,7 +354,7 @@ Exercise plans assigned to patients.
 - `description` (string) - Plan description
 - `duration` (number) - Total duration in minutes
 - `difficulty` (enum) - One of: "beginner", "intermediate", "advanced"
-- `exercises` (array) - Array of exercise objects with sets and reps
+- `exercises` (array) - Array of PlanExercise objects with exerciseId, sets, repetitions, duration, and populated exercise details
 - `score` (number) - Doctor's assigned score (0-10)
 - `rating` (number) - Doctor's rating (1-5 stars)
 - `videoUrl` (string, optional) - Link to instructional video
@@ -485,7 +485,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 ## Data Flow Diagram
 
 ```
-┌─────────────────┐
+┌──────────���──────┐
 │   Vue Component │
 │  (Dashboard)    │
 └────────┬────────┘
@@ -509,7 +509,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
     ┌──��─────┐
     │ Strapi │
     │  API   │
-    └─���──────┘
+    └────────┘
 ```
 
 ---
