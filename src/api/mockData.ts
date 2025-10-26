@@ -33,18 +33,24 @@ export const mockPatients: Patient[] = [
 export const mockExercises: Exercise[] = [
   {
     id: '1',
+    doctorId: '1',
+    doctor: mockDoctor,
     name: 'Push-ups',
     description: 'A classic upper body exercise that strengthens chest, shoulders, and triceps.',
     jsonData: { difficulty: 'medium' },
   },
   {
     id: '2',
+    doctorId: '1',
+    doctor: mockDoctor,
     name: 'Squats',
     description: 'A fundamental lower body exercise targeting quadriceps, hamstrings, and glutes.',
     jsonData: { difficulty: 'medium' },
   },
   {
     id: '3',
+    doctorId: '1',
+    doctor: mockDoctor,
     name: 'Planks',
     description: 'Core strengthening exercise that improves stability and endurance.',
     jsonData: { difficulty: 'hard' },
