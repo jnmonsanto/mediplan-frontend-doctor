@@ -19,6 +19,8 @@ export interface Patient {
 
 export interface Exercise {
   id: string
+  doctorId: string
+  doctor?: Doctor
   name: string
   description: string
   jsonData?: Record<string, unknown>
