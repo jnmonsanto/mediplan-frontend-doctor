@@ -235,12 +235,11 @@ const isEditing = computed(() => !!route.params.id)
 const patients = computed(() => getPatients())
 const exercises = computed(() => getExercises())
 
-const formData = ref<Omit<Plan, 'id' | 'createdAt' | 'updatedAt' | 'score' | 'rating'>>({
+const formData = ref<Omit<Plan, 'id' | 'createdAt' | 'updatedAt' | 'score' | 'rating' | 'duration'>>({
   patientId: '',
   patient: undefined,
   title: '',
   description: '',
-  duration: 30,
   difficulty: 'beginner',
   exercises: [],
   videoUrl: '',
