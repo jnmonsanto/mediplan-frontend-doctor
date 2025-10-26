@@ -66,31 +66,18 @@
           />
         </div>
 
-        <!-- Duration & Difficulty -->
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div>
-            <label class="block text-sm font-medium text-neutral-700">Duration (minutes) *</label>
-            <input
-              v-model.number="formData.duration"
-              type="number"
-              required
-              min="1"
-              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="30"
-            />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-neutral-700">Difficulty *</label>
-            <select
-              v-model="formData.difficulty"
-              required
-              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-            >
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-            </select>
-          </div>
+        <!-- Difficulty -->
+        <div>
+          <label class="block text-sm font-medium text-neutral-700">Difficulty *</label>
+          <select
+            v-model="formData.difficulty"
+            required
+            class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+          >
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
         </div>
 
         <!-- Video URL -->
