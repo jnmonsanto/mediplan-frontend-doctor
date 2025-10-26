@@ -113,6 +113,20 @@ The app uses a top-left hamburger menu for navigation:
 
 Top-right profile icon opens doctor profile editor.
 
+## Screenshots
+
+### Dashboard - Plans View
+![MediPlan Dashboard](https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev)
+Main dashboard showing exercise plans assigned to patients with filters, search, and plan details including title, description, duration, difficulty level, and thumbnail images.
+
+### Patients Management
+![Patients List](https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev/patients)
+Patients page displaying all patients with their contact information, SNS ID, profile photos, and action buttons to edit or delete records.
+
+### Exercises Library
+![Exercises List](https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev/exercises)
+Exercises library showing all available exercises with names, descriptions, and JSON configuration data for advanced setup.
+
 ---
 
 # Strapi Integration Guide
@@ -507,7 +521,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
          │
          ▼
     ┌──��─────┐
-    │ Strapi │
+    ��� Strapi │
     │  API   │
     └────────┘
 ```
