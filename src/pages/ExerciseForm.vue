@@ -39,17 +39,64 @@
           />
         </div>
 
-        <!-- JSON Data -->
+        <!-- Description -->
         <div>
-          <label class="block text-sm font-medium text-neutral-700">JSON Data</label>
+          <label class="block text-sm font-medium text-neutral-700">Description *</label>
+          <textarea
+            v-model="formData.description"
+            required
+            rows="3"
+            class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+            placeholder="Describe the exercise and how to perform it..."
+          />
+        </div>
+
+        <!-- Duration, Reps, Sets -->
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div>
+            <label class="block text-sm font-medium text-neutral-700">Duration (minutes) *</label>
+            <input
+              v-model.number="formData.duration"
+              type="number"
+              required
+              min="1"
+              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="5"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-neutral-700">Default Reps</label>
+            <input
+              v-model.number="formData.reps"
+              type="number"
+              min="1"
+              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="10"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-neutral-700">Default Sets</label>
+            <input
+              v-model.number="formData.sets"
+              type="number"
+              min="1"
+              class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="3"
+            />
+          </div>
+        </div>
+
+        <!-- JSON Data (Optional for backwards compatibility) -->
+        <div>
+          <label class="block text-sm font-medium text-neutral-700">JSON Data (Optional)</label>
           <textarea
             v-model="jsonDataString"
-            rows="10"
+            rows="6"
             class="mt-2 block w-full rounded-lg border border-neutral-300 px-4 py-2 font-mono text-sm text-neutral-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-            placeholder='{"difficulty": "medium", "duration": 5}'
+            placeholder='{"notes": "Additional configuration..."}'
           />
           <p class="mt-2 text-xs text-neutral-600">
-            Enter valid JSON format for exercise configuration.
+            Optional: Enter valid JSON format for additional configuration.
           </p>
           <div v-if="jsonError" class="mt-2 rounded-lg bg-red-50 p-3 text-sm text-red-700">
             {{ jsonError }}
@@ -57,14 +104,9 @@
         </div>
 
         <!-- Preview -->
-        <div
-          v-if="formData.jsonData"
-          class="rounded-lg bg-neutral-50 p-4 border border-neutral-200"
-        >
+        <div v-if="formData.jsonData" class="rounded-lg bg-neutral-50 p-4 border border-neutral-200">
           <p class="text-sm font-medium text-neutral-700 mb-3">JSON Preview:</p>
-          <pre class="text-xs text-neutral-600 overflow-auto">{{
-            JSON.stringify(formData.jsonData, null, 2)
-          }}</pre>
+          <pre class="text-xs text-neutral-600 overflow-auto">{{ JSON.stringify(formData.jsonData, null, 2) }}</pre>
         </div>
 
         <!-- Form Actions -->
@@ -105,6 +147,10 @@ const jsonError = ref('')
 const formData = ref<Exercise>({
   id: '',
   name: '',
+  description: '',
+  duration: 5,
+  reps: undefined,
+  sets: undefined,
   jsonData: {},
 })
 
@@ -124,7 +170,7 @@ watch(
     } else {
       formData.value.jsonData = {}
     }
-  },
+  }
 )
 
 onMounted(() => {
@@ -132,10 +178,10 @@ onMounted(() => {
     const exercise = getExercise(route.params.id as string)
     if (exercise) {
       formData.value = { ...exercise }
-      jsonDataString.value = JSON.stringify(exercise.jsonData || {}, null, 2)
+      jsonDataString.value = exercise.jsonData ? JSON.stringify(exercise.jsonData, null, 2) : ''
     }
   } else {
-    jsonDataString.value = '{}'
+    jsonDataString.value = ''
   }
 })
 
