@@ -9,6 +9,8 @@ export interface Doctor {
 
 export interface Patient {
   id: string
+  doctorId: string
+  doctor?: Doctor
   name: string
   email: string
   photo?: string
