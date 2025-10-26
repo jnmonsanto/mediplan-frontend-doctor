@@ -212,13 +212,11 @@ Exercise plans assigned to patients.
         "id": "1",
         "name": "Push-ups",
         "description": "A classic upper body exercise...",
-        "duration": 5,
-        "reps": 10,
-        "sets": 3,
         "jsonData": { ... }
       },
       "sets": 3,
-      "repetitions": 10
+      "repetitions": 10,
+      "duration": 5
     }
   ],
   "score": 8.5,
