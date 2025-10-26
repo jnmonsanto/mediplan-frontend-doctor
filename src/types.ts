@@ -19,9 +19,6 @@ export interface Exercise {
   id: string
   name: string
   description: string
-  duration: number
-  reps?: number
-  sets?: number
   jsonData?: Record<string, unknown>
 }
 
@@ -29,6 +26,7 @@ export interface PlanExercise {
   exerciseId: string
   sets: number
   repetitions: number
+  duration: number
   exercise?: Exercise
 }
 
