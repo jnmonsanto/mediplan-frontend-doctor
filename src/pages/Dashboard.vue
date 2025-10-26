@@ -457,6 +457,7 @@
 import { ref, computed } from 'vue'
 import { useAppData } from '../composables/useAppData'
 import MainLayout from '../layouts/MainLayout.vue'
+import type { Plan } from '../types'
 
 const { getPlans, getPatients, getExercises, deletePlan, deletePatient, deleteExercise } =
   useAppData()
