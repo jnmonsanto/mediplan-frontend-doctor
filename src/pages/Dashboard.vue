@@ -154,6 +154,15 @@
                   </div>
                 </div>
 
+                <!-- Plan Image -->
+                <div v-if="plan.imageUrl" class="mt-4">
+                  <img
+                    :src="plan.imageUrl"
+                    :alt="plan.title"
+                    class="h-32 w-full rounded-lg object-cover"
+                  />
+                </div>
+
                 <!-- Exercises -->
                 <div class="mt-4">
                   <p class="text-sm font-medium text-neutral-700">Exercises:</p>
