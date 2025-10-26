@@ -116,9 +116,11 @@ Top-right profile icon opens doctor profile editor.
 ## Screenshots
 
 ### Dashboard - Plans View
+
 **Live Demo:** https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev
 
 Main dashboard showing exercise plans assigned to patients with:
+
 - Search and filter functionality
 - Plan details (title, description, duration, difficulty level)
 - Thumbnail images for each plan
@@ -127,9 +129,11 @@ Main dashboard showing exercise plans assigned to patients with:
 - Edit and delete action buttons
 
 ### Patients Management
+
 **Live Demo:** https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev/patients
 
 Patients page displaying all patients with:
+
 - Patient list with photos
 - Contact information (name, email)
 - SNS ID for each patient
@@ -138,9 +142,11 @@ Patients page displaying all patients with:
 - Add new patient button
 
 ### Exercises Library
+
 **Live Demo:** https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev/exercises
 
 Exercises library showing:
+
 - List of all available exercises
 - Exercise names and descriptions
 - JSON configuration data display
