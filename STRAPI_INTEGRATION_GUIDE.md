@@ -152,11 +152,24 @@ A single document for the authenticated doctor's profile.
   "id": "1",
   "name": "Dr. Smith",
   "email": "smith@clinic.com",
+  "phone": "+1 (555) 123-4567",
+  "address": "123 Medical Center Drive, Suite 100, Springfield, IL 62701",
   "photo": "https://...", // URL to image
   "specialization": "Orthopedic",
   "age": 45
 }
 ```
+
+**Field Descriptions:**
+
+- `id` (string) - Unique identifier
+- `name` (string) - Doctor's full name
+- `email` (string) - Doctor's email address
+- `phone` (string, optional) - Doctor's phone number
+- `address` (string, optional) - Doctor's office address
+- `photo` (string, optional) - URL to doctor's profile photo
+- `specialization` (string) - Medical specialization
+- `age` (number) - Doctor's age
 
 **Strapi API Endpoint:** `GET /api/doctor` (or `/api/doctors/me`)
 
