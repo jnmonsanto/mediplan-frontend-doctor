@@ -69,8 +69,8 @@ export const mockPlans: Plan[] = [
     duration: 30,
     difficulty: 'intermediate',
     exercises: [
-      { doctorId: '1', doctor: mockDoctor, exerciseId: '1', sets: 3, repetitions: 10, duration: 5, exercise: mockExercises[0] },
-      { doctorId: '1', doctor: mockDoctor, exerciseId: '2', sets: 3, repetitions: 15, duration: 7, exercise: mockExercises[1] },
+      { exerciseId: '1', sets: 3, repetitions: 10, duration: 5, exercise: mockExercises[0] },
+      { exerciseId: '2', sets: 3, repetitions: 15, duration: 7, exercise: mockExercises[1] },
     ],
     score: 8.5,
     rating: 4,
