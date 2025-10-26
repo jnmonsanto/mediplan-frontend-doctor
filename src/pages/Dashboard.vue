@@ -565,6 +565,10 @@ const formatDate = (date: Date) => {
   })
 }
 
+const calculatePlanDuration = (plan: ReturnType<typeof getPlans>[number]) => {
+  return plan.exercises.reduce((total, exercise) => total + exercise.duration, 0)
+}
+
 const deletePlanConfirm = (id: string) => {
   if (confirm('Are you sure you want to delete this plan?')) {
     deletePlan(id)
