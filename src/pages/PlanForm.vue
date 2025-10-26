@@ -296,6 +296,7 @@ const addExercise = () => {
       exerciseId: newExercise.value.exerciseId,
       sets: newExercise.value.sets,
       repetitions: newExercise.value.repetitions,
+      duration: newExercise.value.duration,
       exercise,
     })
     newExercise.value = {
