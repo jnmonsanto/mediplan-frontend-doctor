@@ -4,6 +4,8 @@ export const mockDoctor: Doctor = {
   id: '1',
   name: 'Dr. Smith',
   email: 'smith@clinic.com',
+  phone: '+1 (555) 123-4567',
+  address: '123 Medical Center Drive, Suite 100, Springfield, IL 62701',
   photo: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop',
   specialization: 'Orthopedic',
   age: 45,
