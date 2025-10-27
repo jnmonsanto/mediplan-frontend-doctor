@@ -12,51 +12,53 @@
         </div>
 
         <!-- Login Form -->
-        <form @submit.prevent="handleLogin" class="space-y-4 mb-8">
-          <div>
-            <label class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
-            <input
-              v-model="email"
-              type="email"
-              required
-              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="Enter your email"
-            />
+        <template v-if="!showForgotPassword">
+          <form @submit.prevent="handleLogin" class="space-y-4 mb-8">
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
+              <input
+                v-model="email"
+                type="email"
+                required
+                class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-neutral-700 mb-2">Password</label>
+              <input
+                v-model="password"
+                type="password"
+                required
+                class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            <div v-if="error" class="p-3 rounded-lg bg-red-50 border border-red-200">
+              <p class="text-sm text-red-700">{{ error }}</p>
+            </div>
+
+            <button
+              type="submit"
+              :disabled="isLoading"
+              class="w-full rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {{ isLoading ? 'Logging in...' : 'Login' }}
+            </button>
+          </form>
+
+          <!-- Forgot Password Link -->
+          <div class="mt-3 mb-6 text-center">
+            <button
+              @click="showForgotPassword = !showForgotPassword"
+              class="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline transition-colors"
+            >
+              Forgot Password?
+            </button>
           </div>
-
-          <div>
-            <label class="block text-sm font-medium text-neutral-700 mb-2">Password</label>
-            <input
-              v-model="password"
-              type="password"
-              required
-              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="Enter your password"
-            />
-          </div>
-
-          <div v-if="error" class="p-3 rounded-lg bg-red-50 border border-red-200">
-            <p class="text-sm text-red-700">{{ error }}</p>
-          </div>
-
-          <button
-            type="submit"
-            :disabled="isLoading"
-            class="w-full rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {{ isLoading ? 'Logging in...' : 'Login' }}
-          </button>
-        </form>
-
-        <!-- Forgot Password Link -->
-        <div class="mt-3 mb-6 text-center">
-          <button
-            @click="showForgotPassword = !showForgotPassword"
-            class="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline transition-colors"
-          >
-            Forgot Password?
-          </button>
-        </div>
+        </template>
 
         <!-- Password Reset Form -->
         <form v-if="showForgotPassword" @submit.prevent="handleSendResetLink" class="space-y-4 mb-8">
