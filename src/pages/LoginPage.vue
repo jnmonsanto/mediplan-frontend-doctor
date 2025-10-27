@@ -136,6 +136,7 @@ const email = ref('')
 const password = ref('')
 const error = ref('')
 const isLoading = ref(false)
+const showForgotPassword = ref(false)
 
 const demoCredentials = ref(
   mockDoctors.map((d) => ({
