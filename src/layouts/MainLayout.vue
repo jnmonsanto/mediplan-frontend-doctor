@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-neutral-50">
     <!-- Header -->
     <header class="sticky top-0 z-40 border-b border-neutral-200 bg-white shadow-sm">
-      <div class="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <!-- Logo/Title -->
         <h1 class="text-xl text-primary-600" style="font-weight: 700">MediPlan</h1>
 
