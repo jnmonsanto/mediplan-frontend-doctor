@@ -156,14 +156,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useAppData } from '../composables/useAppData'
+import { useAuth } from '../composables/useAuth'
 import type { Doctor } from '../types'
 
 const emit = defineEmits<{
   close: []
 }>()
 
+const router = useRouter()
 const { getDoctor, updateDoctor } = useAppData()
+const { logout } = useAuth()
 const currentDoctor = getDoctor()
 
 const formData = ref<Doctor>(
@@ -182,5 +186,12 @@ const formData = ref<Doctor>(
 const handleSave = async () => {
   await updateDoctor(formData.value)
   emit('close')
+}
+
+const handleLogout = () => {
+  if (confirm('Are you sure you want to logout?')) {
+    logout()
+    router.push('/login')
+  }
 }
 </script>
