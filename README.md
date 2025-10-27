@@ -148,10 +148,10 @@ The application requires doctor authentication to access the dashboard. The logi
 
 Use any of these credentials to log in:
 
-| Doctor Name | Email | Password |
-|---|---|---|
-| Dr. Smith | smith@clinic.com | smith123 |
-| Dr. Johnson | johnson@clinic.com | johnson123 |
+| Doctor Name  | Email               | Password    |
+| ------------ | ------------------- | ----------- |
+| Dr. Smith    | smith@clinic.com    | smith123    |
+| Dr. Johnson  | johnson@clinic.com  | johnson123  |
 | Dr. Williams | williams@clinic.com | williams123 |
 
 **Note:** These are demo credentials for development/testing. In production, implement proper authentication with your backend.
@@ -186,6 +186,7 @@ The doctor profile modal allows you to:
 - **Logout** - Securely logout from the application
 
 **Features:**
+
 - Click outside the modal to close it
 - Changes are saved to localStorage and backend (if Strapi connected)
 - Profile information is displayed in various parts of the app
@@ -622,16 +623,19 @@ The frontend includes a complete doctor authentication system with login and pas
 The authentication system uses credential-based login with demo doctors:
 
 - **Login Page** (`src/pages/LoginPage.vue`)
+
   - Email and password form
   - Demo credentials display for reference
   - Forgot password link
 
 - **Password Reset**
+
   - Email-based password recovery form
   - Shows confirmation message after reset
   - Password is updated in the system
 
 - **Auth Composable** (`src/composables/useAuth.ts`)
+
   - `loginWithCredentials(email, password)` - Authenticate doctor
   - `logout()` - Sign out doctor
   - `getCurrentDoctor()` - Get current logged-in doctor
@@ -667,6 +671,7 @@ When connecting to Strapi, implement proper security:
 ### Option 1: JWT Tokens (Recommended)
 
 1. **Strapi Side:**
+
    - Enable Strapi's built-in authentication
    - Use hashed passwords (bcrypt)
    - Configure JWT in `config/plugins.js`
@@ -681,7 +686,7 @@ const getAuthHeaders = () => {
   const token = localStorage.getItem('auth_token')
   return {
     'Content-Type': 'application/json',
-    ...(token && { 'Authorization': `Bearer ${token}` }),
+    ...(token && { Authorization: `Bearer ${token}` }),
   }
 }
 ```

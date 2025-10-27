@@ -82,6 +82,7 @@ npm run develop
 
 1. In Strapi admin panel, create a new Collection Type called `doctors`
 2. Add these fields:
+
    - `name` (Text)
    - `email` (Email)
    - `password` (Text - will be hashed in production)
