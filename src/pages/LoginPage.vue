@@ -56,6 +56,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '../composables/useAuth'
+import { initializeData } from '../composables/useAppData'
 import { mockDoctors } from '../api/mockData'
 
 const router = useRouter()
@@ -71,8 +72,9 @@ onMounted(() => {
   }
 })
 
-const selectDoctor = (doctor) => {
+const selectDoctor = async (doctor) => {
   login(doctor)
+  await initializeData()
   router.push('/')
 }
 </script>
