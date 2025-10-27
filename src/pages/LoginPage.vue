@@ -59,55 +59,20 @@
         </div>
 
         <!-- Password Reset Form -->
-        <form v-if="showForgotPassword" @submit.prevent="handleResetPassword" class="space-y-4 mb-8">
-          <div class="flex items-center justify-between mb-6">
-            <h2 class="text-lg font-bold text-neutral-900">Reset Password</h2>
-            <button
-              type="button"
-              @click="showForgotPassword = false"
-              class="rounded-lg p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
-            >
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
+        <form v-if="showForgotPassword" @submit.prevent="handleSendResetLink" class="space-y-4 mb-8">
+          <h2 class="text-xl font-bold text-neutral-900 mb-3">Reset Password</h2>
+          <p class="text-sm text-neutral-600 mb-6">
+            Enter your email address and we'll send you a link to reset your password.
+          </p>
 
           <div>
-            <label class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
+            <label class="block text-sm font-medium text-neutral-700 mb-2">Email Address</label>
             <input
               v-model="resetEmail"
               type="email"
               required
               class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
               placeholder="Enter your email"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-neutral-700 mb-2">New Password</label>
-            <input
-              v-model="resetPassword"
-              type="password"
-              required
-              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="Enter new password"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-neutral-700 mb-2">Confirm Password</label>
-            <input
-              v-model="resetPasswordConfirm"
-              type="password"
-              required
-              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
-              placeholder="Confirm new password"
             />
           </div>
 
@@ -119,20 +84,21 @@
             <p class="text-sm text-green-700">{{ resetSuccess }}</p>
           </div>
 
-          <div class="flex gap-3">
+          <button
+            type="submit"
+            :disabled="isResettingPassword"
+            class="w-full rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {{ isResettingPassword ? 'Sending...' : 'Send Reset Link' }}
+          </button>
+
+          <div class="text-center">
             <button
               type="button"
               @click="showForgotPassword = false"
-              class="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+              class="text-sm text-primary-600 hover:text-primary-700 hover:underline transition-colors"
             >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              :disabled="isResettingPassword"
-              class="flex-1 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {{ isResettingPassword ? 'Resetting...' : 'Reset Password' }}
+              Remember your password? Back to Login
             </button>
           </div>
         </form>
