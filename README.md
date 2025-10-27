@@ -196,6 +196,8 @@ The doctor profile modal allows you to:
 
 ### Login Screen
 
+**Live Demo:** https://d419d4e8a4eb4edba08ff135ac8d1a91-cb7ea198cf0e41a985eeb04e5.fly.dev/login
+
 Doctor authentication page with:
 
 - Credential-based login form
@@ -711,7 +713,7 @@ const getAuthHeaders = () => {
 ┌──────────���──────┐
 │   Vue Component │
 │  (Dashboard)    │
-└────────┬────────┘
+└────────┬────���───┘
          │
          ▼
 ┌───��─────────────────┐
