@@ -844,7 +844,20 @@ These logs help you understand which mode the app is in and identify issues.
 
 ## API Service Reference
 
-All operations are in `src/api/strapiService.ts`:
+### Authentication Methods
+
+All authentication operations are in `src/composables/useAuth.ts`:
+
+```typescript
+loginWithCredentials(email: string, password: string): Doctor | null
+logout(): void
+getCurrentDoctor(): Doctor | null
+initializeAuth(): void
+```
+
+### Data Service Methods
+
+All data operations are in `src/api/strapiService.ts`:
 
 ### Doctor Operations
 
