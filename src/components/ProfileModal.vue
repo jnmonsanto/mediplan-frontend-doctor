@@ -6,7 +6,7 @@
         <h2 class="text-xl font-bold text-neutral-900">Doctor Profile</h2>
         <button
           @click="emit('close')"
-          class="rounded-lg p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
+          class="rounded-lg p-1 text-neutral-500 hover:text-neutral-700"
         >
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
