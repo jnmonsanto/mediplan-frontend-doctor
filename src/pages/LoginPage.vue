@@ -1,5 +1,7 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center px-4">
+  <div
+    class="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center px-4"
+  >
     <div class="w-full max-w-md">
       <!-- Card -->
       <div class="bg-white rounded-lg shadow-lg p-8">
@@ -65,7 +67,10 @@
           >
             <p class="font-semibold text-neutral-900">{{ cred.name }}</p>
             <p class="text-neutral-600">{{ cred.email }}</p>
-            <p class="text-neutral-600">Password: <code class="font-mono bg-white px-2 py-1 rounded">{{ cred.password }}</code></p>
+            <p class="text-neutral-600">
+              Password:
+              <code class="font-mono bg-white px-2 py-1 rounded">{{ cred.password }}</code>
+            </p>
           </div>
         </div>
 

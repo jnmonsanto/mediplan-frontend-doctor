@@ -218,7 +218,8 @@ export const mockPlans: Plan[] = [
     patientId: '5',
     patient: mockPatients[2],
     title: 'Post-Injury Rehabilitation',
-    description: 'Gentle rehabilitation program for post-surgical recovery focusing on gradual strength building.',
+    description:
+      'Gentle rehabilitation program for post-surgical recovery focusing on gradual strength building.',
     difficulty: 'beginner',
     exercises: [
       { exerciseId: '3', sets: 2, repetitions: 15, duration: 10, exercise: mockExercises[2] },
@@ -239,7 +240,8 @@ export const mockPlans: Plan[] = [
     patientId: '3',
     patient: mockPatients[3],
     title: 'Lower Body Strengthening',
-    description: 'A focused lower body workout program targeting quadriceps, hamstrings, and glutes.',
+    description:
+      'A focused lower body workout program targeting quadriceps, hamstrings, and glutes.',
     difficulty: 'intermediate',
     exercises: [
       { exerciseId: '2', sets: 3, repetitions: 15, duration: 8, exercise: mockExercises[1] },
@@ -279,7 +281,8 @@ export const mockPlans: Plan[] = [
     patientId: '6',
     patient: mockPatients[5],
     title: 'Flexibility & Mobility Training',
-    description: 'Comprehensive stretching and mobility program designed to improve range of motion.',
+    description:
+      'Comprehensive stretching and mobility program designed to improve range of motion.',
     difficulty: 'intermediate',
     exercises: [
       { exerciseId: '1', sets: 3, repetitions: 20, duration: 8, exercise: mockExercises[0] },
@@ -300,7 +303,8 @@ export const mockPlans: Plan[] = [
     patientId: '7',
     patient: mockPatients[6],
     title: 'Athletic Performance Enhancement',
-    description: 'High-intensity training program designed to improve athletic performance and endurance.',
+    description:
+      'High-intensity training program designed to improve athletic performance and endurance.',
     difficulty: 'advanced',
     exercises: [
       { exerciseId: '2', sets: 4, repetitions: 25, duration: 12, exercise: mockExercises[1] },
@@ -320,7 +324,8 @@ export const mockPlans: Plan[] = [
     patientId: '8',
     patient: mockPatients[7],
     title: 'Injury Prevention Program',
-    description: 'Specialized program focusing on injury prevention through balanced strength and flexibility training.',
+    description:
+      'Specialized program focusing on injury prevention through balanced strength and flexibility training.',
     difficulty: 'intermediate',
     exercises: [
       { exerciseId: '1', sets: 3, repetitions: 15, duration: 7, exercise: mockExercises[0] },
@@ -340,7 +345,8 @@ export const mockPlans: Plan[] = [
     patientId: '9',
     patient: mockPatients[8],
     title: 'Cardio & Conditioning Bootcamp',
-    description: 'Intense cardiovascular and conditioning program for competitive athletes and active individuals.',
+    description:
+      'Intense cardiovascular and conditioning program for competitive athletes and active individuals.',
     difficulty: 'advanced',
     exercises: [
       { exerciseId: '2', sets: 5, repetitions: 30, duration: 15, exercise: mockExercises[1] },
