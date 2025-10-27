@@ -58,32 +58,84 @@
           </button>
         </div>
 
-        <!-- Password Reset Section -->
-        <div
-          v-if="showForgotPassword"
-          class="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-200"
-        >
-          <p class="text-sm text-blue-900 mb-4">
-            <strong>Password Reset</strong><br />
-            Use one of the demo doctor accounts below to log in:
-          </p>
-          <div class="space-y-2">
-            <div
-              v-for="(cred, idx) in demoCredentials"
-              :key="`reset-${idx}`"
-              class="p-2 rounded bg-white border border-blue-100 text-xs"
+        <!-- Password Reset Form -->
+        <form v-if="showForgotPassword" @submit.prevent="handleResetPassword" class="space-y-4 mb-8">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-lg font-bold text-neutral-900">Reset Password</h2>
+            <button
+              type="button"
+              @click="showForgotPassword = false"
+              class="rounded-lg p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
             >
-              <p class="font-semibold text-neutral-900">{{ cred.name }}</p>
-              <p class="text-neutral-600">{{ cred.email }}</p>
-              <p class="text-neutral-600">
-                Password:
-                <code class="font-mono bg-blue-100 px-1 py-0.5 rounded text-xs">{{
-                  cred.password
-                }}</code>
-              </p>
-            </div>
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
-        </div>
+
+          <div>
+            <label class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
+            <input
+              v-model="resetEmail"
+              type="email"
+              required
+              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-neutral-700 mb-2">New Password</label>
+            <input
+              v-model="resetPassword"
+              type="password"
+              required
+              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="Enter new password"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-neutral-700 mb-2">Confirm Password</label>
+            <input
+              v-model="resetPasswordConfirm"
+              type="password"
+              required
+              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="Confirm new password"
+            />
+          </div>
+
+          <div v-if="resetError" class="p-3 rounded-lg bg-red-50 border border-red-200">
+            <p class="text-sm text-red-700">{{ resetError }}</p>
+          </div>
+
+          <div v-if="resetSuccess" class="p-3 rounded-lg bg-green-50 border border-green-200">
+            <p class="text-sm text-green-700">{{ resetSuccess }}</p>
+          </div>
+
+          <div class="flex gap-3">
+            <button
+              type="button"
+              @click="showForgotPassword = false"
+              class="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              :disabled="isResettingPassword"
+              class="flex-1 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {{ isResettingPassword ? 'Resetting...' : 'Reset Password' }}
+            </button>
+          </div>
+        </form>
 
         <!-- Divider -->
         <div class="relative mb-8">
@@ -137,6 +189,12 @@ const password = ref('')
 const error = ref('')
 const isLoading = ref(false)
 const showForgotPassword = ref(false)
+const resetEmail = ref('')
+const resetPassword = ref('')
+const resetPasswordConfirm = ref('')
+const resetError = ref('')
+const resetSuccess = ref('')
+const isResettingPassword = ref(false)
 
 const demoCredentials = ref(
   mockDoctors.map((d) => ({
@@ -171,6 +229,46 @@ const handleLogin = async () => {
     console.error(e)
   } finally {
     isLoading.value = false
+  }
+}
+
+const handleResetPassword = async () => {
+  resetError.value = ''
+  resetSuccess.value = ''
+  isResettingPassword.value = true
+
+  try {
+    if (resetPassword.value !== resetPasswordConfirm.value) {
+      resetError.value = 'Passwords do not match'
+      return
+    }
+
+    if (resetPassword.value.length < 6) {
+      resetError.value = 'Password must be at least 6 characters'
+      return
+    }
+
+    const doctor = mockDoctors.find((d) => d.email === resetEmail.value)
+    if (!doctor) {
+      resetError.value = 'Email not found'
+      return
+    }
+
+    doctor.password = resetPassword.value
+    resetSuccess.value = 'Password reset successfully! You can now log in with your new password.'
+
+    setTimeout(() => {
+      showForgotPassword.value = false
+      resetEmail.value = ''
+      resetPassword.value = ''
+      resetPasswordConfirm.value = ''
+      resetSuccess.value = ''
+    }, 2000)
+  } catch (e) {
+    resetError.value = 'Password reset failed. Please try again.'
+    console.error(e)
+  } finally {
+    isResettingPassword.value = false
   }
 }
 </script>
