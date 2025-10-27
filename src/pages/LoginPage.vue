@@ -6,7 +6,7 @@
       <!-- Header -->
       <div class="text-center mb-8">
         <h1 class="text-5xl font-bold text-primary-600" style="font-weight: 700">MediPlan</h1>
-        <p class="mt-2 text-neutral-600">Doctor Portal</p>
+        <p class="mt-2 text-neutral-600">Doctor Management Portal</p>
       </div>
 
       <!-- Card -->
