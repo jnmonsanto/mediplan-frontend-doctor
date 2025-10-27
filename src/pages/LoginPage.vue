@@ -1,15 +1,16 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center px-4"
+    class="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex flex-col items-center justify-center px-4"
   >
     <div class="w-full max-w-md">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-primary-600" style="font-weight: 700">MediPlan</h1>
+        <p class="mt-2 text-neutral-600">Doctor Portal</p>
+      </div>
+
       <!-- Card -->
       <div class="bg-white rounded-lg shadow-lg p-8">
-        <!-- Header -->
-        <div class="text-center mb-8">
-          <h1 class="text-3xl font-bold text-primary-600" style="font-weight: 700">MediPlan</h1>
-          <p class="mt-2 text-neutral-600">Doctor Portal</p>
-        </div>
 
         <!-- Login Form -->
         <template v-if="!showForgotPassword">
