@@ -897,13 +897,23 @@ deletePlan(id: string): Promise<void>
 
 ## Mock Data Fallback
 
-If your Strapi API is unreachable, the app automatically falls back to mock data from `src/api/mockData.ts`. This allows:
+The app includes comprehensive mock data for development and testing. If your Strapi API is unreachable, the app automatically falls back to mock data from `src/api/mockData.ts`. This allows:
 
-- **Development:** Work offline with mock data
-- **Testing:** Test UI without API
+- **Development:** Work offline with complete mock data
+- **Testing:** Test UI and authentication without API
 - **Fallback:** Graceful degradation if API is down
+- **Demo Credentials:** Pre-configured doctor accounts for login testing
+
+### Mock Data Includes
+
+- **Doctors** - 3 demo doctors with credentials (Smith, Johnson, Williams)
+- **Patients** - Multiple patients with details and relationships to doctors
+- **Exercises** - Exercise library with descriptions and JSON configurations
+- **Plans** - Exercise plans with assignments to patients
 
 To use mock data intentionally, simply don't set `VITE_STRAPI_URL`.
+
+**Note:** Authentication always works with mock data using the provided credentials. When connecting to Strapi, ensure your doctors collection has matching email/password combinations.
 
 ---
 
