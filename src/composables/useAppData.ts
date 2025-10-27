@@ -10,13 +10,17 @@ const exercises = ref<Exercise[]>([])
 const plans = ref<Plan[]>([])
 
 // Load initial data
-async function initializeData() {
+export async function initializeData() {
   try {
     const { getCurrentDoctor } = useAuth()
     const currentDoctor = getCurrentDoctor()
 
     if (!currentDoctor) {
       console.log('No doctor logged in')
+      doctor.value = null
+      patients.value = []
+      plans.value = []
+      exercises.value = []
       return
     }
 
@@ -29,13 +33,16 @@ async function initializeData() {
     patients.value = allPatients.filter((p) => p.doctorId === currentDoctor.id)
     exercises.value = allExercises // Exercises are global (doctorId = '0')
     plans.value = allPlans.filter((p) => p.doctorId === currentDoctor.id)
+
+    console.log(`Loaded data for ${currentDoctor.name}:`, {
+      patients: patients.value.length,
+      plans: plans.value.length,
+      exercises: exercises.value.length,
+    })
   } catch (error) {
     console.error('Error initializing data:', error)
   }
 }
-
-// Initialize on module load
-initializeData()
 
 export function useAppData() {
   // Doctor
