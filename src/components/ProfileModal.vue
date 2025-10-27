@@ -1,5 +1,8 @@
 <template>
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" @click="emit('close')">
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+    @click="emit('close')"
+  >
     <div class="w-full max-w-md rounded-xl bg-white shadow-xl" @click.stop>
       <!-- Header -->
       <div class="flex items-center justify-between border-b border-neutral-200 px-6 py-4">

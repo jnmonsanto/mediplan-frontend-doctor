@@ -11,7 +11,6 @@
 
       <!-- Card -->
       <div class="bg-white rounded-lg shadow-lg p-8 border border-border">
-
         <!-- Login Form -->
         <template v-if="!showForgotPassword">
           <h2 class="text-2xl font-bold text-foreground mb-6">Login</h2>
@@ -63,7 +62,11 @@
         </template>
 
         <!-- Password Reset Form -->
-        <form v-if="showForgotPassword" @submit.prevent="handleSendResetLink" class="space-y-4 mb-8">
+        <form
+          v-if="showForgotPassword"
+          @submit.prevent="handleSendResetLink"
+          class="space-y-4 mb-8"
+        >
           <h2 class="text-xl font-bold text-neutral-900 mb-3">Reset Password</h2>
           <p class="text-sm text-neutral-600 mb-6">
             Enter your email address and we'll send you a link to reset your password.
