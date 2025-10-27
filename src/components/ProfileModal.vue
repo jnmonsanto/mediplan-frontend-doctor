@@ -102,16 +102,37 @@
       </div>
 
       <!-- Footer -->
-      <div class="flex gap-3 border-t border-neutral-200 px-6 py-4">
+      <div class="space-y-3 border-t border-neutral-200 px-6 py-4">
+        <div class="flex gap-3">
+          <button
+            @click="emit('close')"
+            class="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+          >
+            Cancel
+          </button>
+          <button
+            @click="handleSave"
+            class="flex-1 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700"
+          >
+            <svg
+              class="mb-1 inline h-4 w-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            Save
+          </button>
+        </div>
         <button
-          @click="emit('close')"
-          class="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
-        >
-          Cancel
-        </button>
-        <button
-          @click="handleSave"
-          class="flex-1 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700"
+          @click="handleLogout"
+          class="w-full rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-50"
         >
           <svg
             class="mb-1 inline h-4 w-4 mr-2"
@@ -123,10 +144,10 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M5 13l4 4L19 7"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
             />
           </svg>
-          Save
+          Logout
         </button>
       </div>
     </div>
