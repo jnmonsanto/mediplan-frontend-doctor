@@ -106,30 +106,32 @@
         </form>
 
         <!-- Divider -->
-        <div class="relative mb-8">
-          <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-t border-neutral-300"></div>
+        <template v-if="!showForgotPassword">
+          <div class="relative mb-8">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-neutral-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="bg-white px-2 text-neutral-500">Demo Credentials</span>
+            </div>
           </div>
-          <div class="relative flex justify-center text-sm">
-            <span class="bg-white px-2 text-neutral-500">Demo Credentials</span>
-          </div>
-        </div>
 
-        <!-- Demo Credentials List -->
-        <div class="space-y-3">
-          <div
-            v-for="(cred, idx) in demoCredentials"
-            :key="idx"
-            class="p-3 rounded-lg bg-neutral-50 border border-neutral-200 text-sm"
-          >
-            <p class="font-semibold text-neutral-900">{{ cred.name }}</p>
-            <p class="text-neutral-600">{{ cred.email }}</p>
-            <p class="text-neutral-600">
-              Password:
-              <code class="font-mono bg-white px-2 py-1 rounded">{{ cred.password }}</code>
-            </p>
+          <!-- Demo Credentials List -->
+          <div class="space-y-3">
+            <div
+              v-for="(cred, idx) in demoCredentials"
+              :key="idx"
+              class="p-3 rounded-lg bg-neutral-50 border border-neutral-200 text-sm"
+            >
+              <p class="font-semibold text-neutral-900">{{ cred.name }}</p>
+              <p class="text-neutral-600">{{ cred.email }}</p>
+              <p class="text-neutral-600">
+                Password:
+                <code class="font-mono bg-white px-2 py-1 rounded">{{ cred.password }}</code>
+              </p>
+            </div>
           </div>
-        </div>
+        </template>
 
         <!-- Footer -->
         <div class="mt-8 pt-6 border-t border-neutral-200">
