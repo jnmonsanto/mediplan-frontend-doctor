@@ -49,7 +49,7 @@
         </form>
 
         <!-- Forgot Password Link -->
-        <div class="my-6 text-center">
+        <div class="mt-3 mb-6 text-center">
           <button
             @click="showForgotPassword = !showForgotPassword"
             class="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline transition-colors"
