@@ -276,7 +276,25 @@ Create a `.env.local` file in the root of this project:
 VITE_STRAPI_URL=http://localhost:1337
 ```
 
-### Step 3: Restart the Development Server
+### Step 3: Set Up Doctors Collection
+
+Create a `doctors` collection in Strapi with the demo doctors and passwords:
+
+```json
+{
+  "id": "1",
+  "name": "Dr. Smith",
+  "email": "smith@clinic.com",
+  "password": "smith123",
+  "phone": "+1 (555) 123-4567",
+  "address": "123 Medical Center Drive",
+  "photo": "https://...",
+  "specialization": "Orthopedic",
+  "age": 45
+}
+```
+
+### Step 4: Restart the Development Server
 
 ```bash
 npm run dev
@@ -285,7 +303,7 @@ npm run dev
 The frontend will now:
 
 - Log: `[Strapi] Connected to: http://localhost:1337`
-- Fetch data from your Strapi API instead of using mock data
+- Fetch authentication and data from your Strapi API
 - Automatically fall back to mock data if the API is unreachable
 
 ---
@@ -621,7 +639,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 ┌───��─────────────────┐
 │  useAppData()       │ (src/composables/useAppData.ts)
 │  Composable         │ - Manages reactive state
-│                     ��� - Coordinates API calls
+│                     │ - Coordinates API calls
 └────────┬──────────���─┘
          │
          ▼
