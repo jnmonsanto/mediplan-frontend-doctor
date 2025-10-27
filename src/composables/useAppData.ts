@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { strapiService } from '../api/strapiService'
+import { useAuth } from './useAuth'
 import type { Plan, Patient, Exercise, Doctor } from '../types'
 
 // Reactive references - initialized from Strapi service
@@ -11,10 +12,23 @@ const plans = ref<Plan[]>([])
 // Load initial data
 async function initializeData() {
   try {
-    doctor.value = await strapiService.getDoctor()
-    patients.value = await strapiService.getPatients()
-    exercises.value = await strapiService.getExercises()
-    plans.value = await strapiService.getPlans()
+    const { getCurrentDoctor } = useAuth()
+    const currentDoctor = getCurrentDoctor()
+
+    if (!currentDoctor) {
+      console.log('No doctor logged in')
+      return
+    }
+
+    doctor.value = currentDoctor
+    const allPatients = await strapiService.getPatients()
+    const allExercises = await strapiService.getExercises()
+    const allPlans = await strapiService.getPlans()
+
+    // Filter data by current doctor
+    patients.value = allPatients.filter((p) => p.doctorId === currentDoctor.id)
+    exercises.value = allExercises // Exercises are global (doctorId = '0')
+    plans.value = allPlans.filter((p) => p.doctorId === currentDoctor.id)
   } catch (error) {
     console.error('Error initializing data:', error)
   }
