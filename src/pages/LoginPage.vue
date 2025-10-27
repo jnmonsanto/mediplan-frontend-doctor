@@ -14,6 +14,7 @@
 
         <!-- Login Form -->
         <template v-if="!showForgotPassword">
+          <h2 class="text-2xl font-bold text-foreground mb-6">Login</h2>
           <form @submit.prevent="handleLogin" class="space-y-4 mb-8">
             <div>
               <label class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
