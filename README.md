@@ -32,11 +32,13 @@ A production-ready Vue 3 + TypeScript + TailwindCSS frontend application for man
 
 ## Features
 
+- 🔐 **Doctor Authentication** - Credential-based login with demo doctor accounts
+- 🔑 **Password Reset** - Forgot password functionality with email-based reset link
 - 📋 **Dashboard** - Unified view to manage Plans, Patients, and Exercises
 - 👥 **Patient Management** - Add, edit, delete patients with full details
 - 💪 **Exercise Library** - Manage exercise database with JSON configuration
 - 📊 **Plan Management** - Create and assign exercise plans to patients with sets and reps
-- 👨‍⚕️ **Doctor Profile** - View and edit doctor information
+- 👨‍⚕️ **Doctor Profile** - View and edit doctor information with click-outside-to-close modal
 - 🔍 **Search & Filtering** - Full-text search and sort options on all lists
 - 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
 - 🎨 **Modern UI** - Beautiful design with Tailwind CSS and custom color scheme
