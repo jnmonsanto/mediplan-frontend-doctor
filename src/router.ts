@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuth } from './composables/useAuth'
+import { initializeData } from './composables/useAppData'
 import Dashboard from './pages/Dashboard.vue'
 import LoginPage from './pages/LoginPage.vue'
 import PlansList from './pages/PlansList.vue'
