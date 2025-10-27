@@ -3,7 +3,7 @@
     <div class="w-full max-w-md rounded-xl bg-white shadow-xl">
       <!-- Header -->
       <div class="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
-        <h2 class="text-xl font-semibold text-neutral-900">Doctor Profile</h2>
+        <h2 class="text-xl font-bold text-neutral-900">Doctor Profile</h2>
         <button
           @click="emit('close')"
           class="rounded-lg p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
