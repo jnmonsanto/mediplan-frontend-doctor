@@ -43,6 +43,7 @@ A production-ready Vue 3 + TypeScript + TailwindCSS frontend application for man
 - 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
 - 🎨 **Modern UI** - Beautiful design with Tailwind CSS and custom color scheme
 - 🔗 **Strapi Ready** - Full integration with Strapi backend (with mock data fallback)
+- 📄 **Application Footer** - App-wide footer with branding and year information
 
 ## Tech Stack
 
