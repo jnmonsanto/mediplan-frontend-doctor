@@ -96,13 +96,16 @@
           </button>
 
           <div class="text-center">
-            <button
-              type="button"
-              @click="showForgotPassword = false"
-              class="text-sm text-primary-600 hover:text-primary-700 hover:underline transition-colors"
-            >
-              Remember your password? Back to Login
-            </button>
+            <p class="text-sm text-neutral-600">
+              Remember your password?
+              <button
+                type="button"
+                @click="showForgotPassword = false"
+                class="font-bold text-primary-600 hover:text-primary-700 hover:underline transition-colors"
+              >
+                Back to Login
+              </button>
+            </p>
           </div>
         </form>
 
