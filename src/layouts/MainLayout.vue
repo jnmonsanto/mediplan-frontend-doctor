@@ -29,6 +29,13 @@
       <slot />
     </main>
 
+    <!-- Footer -->
+    <footer class="border-t border-neutral-200 bg-white py-4 text-center">
+      <p class="text-sm text-neutral-600">
+        Developed at FCTUC {{ currentYear }}
+      </p>
+    </footer>
+
     <!-- Profile Modal -->
     <ProfileModal v-if="showProfileModal" @close="showProfileModal = false" />
   </div>
