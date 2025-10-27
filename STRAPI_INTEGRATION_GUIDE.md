@@ -51,7 +51,19 @@ The integration is handled through:
 
 - **`src/api/strapiService.ts`** - Service layer that handles all API communication
 - **`src/composables/useAppData.ts`** - Vue composable that manages application state
+- **`src/composables/useAuth.ts`** - Authentication composable for doctor login/logout
+- **`src/pages/LoginPage.vue`** - Doctor authentication interface with password reset
 - **Environment variables** - Configuration for Strapi URL
+
+### Key Features
+
+- ✅ Doctor credential-based authentication (email & password)
+- ✅ Password reset functionality with confirmation
+- ✅ Mock doctor accounts for development/testing
+- ✅ Doctor profile management (view and edit)
+- ✅ Session persistence via localStorage
+- ✅ Protected routes requiring authentication
+- ✅ Automatic data sync with Strapi backend
 
 ## Quick Start
 
