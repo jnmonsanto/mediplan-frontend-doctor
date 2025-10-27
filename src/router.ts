@@ -84,7 +84,7 @@ const router = createRouter({
 })
 
 // Route guard for authentication
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   const { isAuthenticated, initializeAuth } = useAuth()
 
   // Initialize auth on first load
@@ -97,6 +97,10 @@ router.beforeEach((to, from, next) => {
   } else if (to.path === '/login' && isAuthenticated.value) {
     next('/')
   } else {
+    // Initialize data when authenticated and entering protected route
+    if (isAuthenticated.value && requiresAuth) {
+      await initializeData()
+    }
     next()
   }
 })
