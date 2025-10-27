@@ -11,6 +11,30 @@ export const mockDoctor: Doctor = {
   age: 45,
 }
 
+export const mockDoctors: Doctor[] = [
+  mockDoctor,
+  {
+    id: '2',
+    name: 'Dr. Johnson',
+    email: 'johnson@clinic.com',
+    phone: '+1 (555) 234-5678',
+    address: '456 Health Plaza, Suite 200, Springfield, IL 62704',
+    photo: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=400&h=400&fit=crop',
+    specialization: 'Physical Therapy',
+    age: 38,
+  },
+  {
+    id: '3',
+    name: 'Dr. Williams',
+    email: 'williams@clinic.com',
+    phone: '+1 (555) 345-6789',
+    address: '789 Wellness Center, Suite 300, Springfield, IL 62705',
+    photo: 'https://images.unsplash.com/photo-1559839734033-6461accc113d?w=400&h=400&fit=crop',
+    specialization: 'Sports Medicine',
+    age: 42,
+  },
+]
+
 export const mockPatients: Patient[] = [
   {
     id: '1',
