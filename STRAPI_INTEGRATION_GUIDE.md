@@ -141,9 +141,9 @@ If no Strapi URL is set, you'll see: `[Strapi] Using mock data (no VITE_STRAPI_U
 
 The frontend expects your Strapi collections to be structured as follows:
 
-### Collection: `doctors` (Singleton)
+### Collection: `doctors`
 
-A single document for the authenticated doctor's profile.
+Doctor profiles with authentication credentials for the login system.
 
 **Fields:**
 
@@ -152,9 +152,10 @@ A single document for the authenticated doctor's profile.
   "id": "1",
   "name": "Dr. Smith",
   "email": "smith@clinic.com",
+  "password": "smith123",
   "phone": "+1 (555) 123-4567",
   "address": "123 Medical Center Drive, Suite 100, Springfield, IL 62701",
-  "photo": "https://...", // URL to image
+  "photo": "https://...",
   "specialization": "Orthopedic",
   "age": 45
 }
@@ -164,14 +165,29 @@ A single document for the authenticated doctor's profile.
 
 - `id` (string) - Unique identifier
 - `name` (string) - Doctor's full name
-- `email` (string) - Doctor's email address
+- `email` (string) - Doctor's email address (used for login)
+- `password` (string) - Doctor's password (used for login) ⚠️ **Hash with bcrypt in production**
 - `phone` (string, optional) - Doctor's phone number
 - `address` (string, optional) - Doctor's office address
 - `photo` (string, optional) - URL to doctor's profile photo
 - `specialization` (string) - Medical specialization
 - `age` (number) - Doctor's age
 
-**Strapi API Endpoint:** `GET /api/doctor` (or `/api/doctors/me`)
+**Strapi API Endpoints:**
+
+```
+GET    /api/doctors              // Get all doctors
+POST   /api/doctors              // Create a doctor (registration)
+PUT    /api/doctors/:id          // Update a doctor's profile
+DELETE /api/doctors/:id          // Delete a doctor account
+```
+
+**Authentication Notes:**
+
+- The frontend's `loginWithCredentials()` function searches for a doctor by email and password match
+- In production, implement proper password hashing (bcrypt or similar)
+- Consider implementing JWT-based authentication for secure token exchange
+- Do NOT store plain text passwords in production
 
 ---
 
