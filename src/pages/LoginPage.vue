@@ -101,7 +101,7 @@
               <button
                 type="button"
                 @click="showForgotPassword = false"
-                class="font-bold text-primary-600 hover:text-primary-700 hover:underline transition-colors"
+                class="font-bold text-primary-600 hover:text-primary-700 transition-colors"
               >
                 Back to Login
               </button>
