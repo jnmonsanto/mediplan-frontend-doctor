@@ -360,9 +360,9 @@ If no Strapi URL is set, you'll see: `[Strapi] Using mock data (no VITE_STRAPI_U
 
 The frontend expects your Strapi collections to be structured as follows:
 
-### Collection: `doctors` (Singleton)
+### Collection: `doctors`
 
-A single document for the authenticated doctor's profile.
+Doctor profiles with authentication credentials.
 
 **Fields:**
 
@@ -371,13 +371,37 @@ A single document for the authenticated doctor's profile.
   "id": "1",
   "name": "Dr. Smith",
   "email": "smith@clinic.com",
-  "photo": "https://...", // URL to image
+  "password": "smith123",
+  "phone": "+1 (555) 123-4567",
+  "address": "123 Medical Center Drive, Suite 100, Springfield, IL 62701",
+  "photo": "https://...",
   "specialization": "Orthopedic",
   "age": 45
 }
 ```
 
-**Strapi API Endpoint:** `GET /api/doctor` (or `/api/doctors/me`)
+**Field Descriptions:**
+
+- `id` (string) - Unique identifier
+- `name` (string) - Doctor's full name
+- `email` (string) - Doctor's email address (used for login)
+- `password` (string) - Doctor's password (used for login)
+- `phone` (string, optional) - Doctor's phone number
+- `address` (string, optional) - Doctor's office address
+- `photo` (string, optional) - URL to doctor's profile photo
+- `specialization` (string) - Medical specialization
+- `age` (number) - Doctor's age
+
+**Strapi API Endpoints:**
+
+```
+GET    /api/doctors              // Get all doctors
+POST   /api/doctors              // Create a doctor
+PUT    /api/doctors/:id          // Update a doctor
+DELETE /api/doctors/:id          // Delete a doctor
+```
+
+**Security Note:** In production, implement proper password hashing and use JWT tokens instead of storing plain passwords.
 
 ---
 
