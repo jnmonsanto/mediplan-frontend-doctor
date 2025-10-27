@@ -175,7 +175,31 @@ After logging in, the app uses a top-left hamburger menu for navigation:
 
 Top-right profile icon opens doctor profile editor (click outside the modal to close).
 
+## Doctor Profile
+
+The doctor profile modal allows you to:
+
+- **View Profile Information** - Name, email, phone, address, specialization, age
+- **Update Profile Photo** - Change your profile picture via URL
+- **Edit Information** - Modify any profile details
+- **Save Changes** - Update your information on the backend
+- **Logout** - Securely logout from the application
+
+**Features:**
+- Click outside the modal to close it
+- Changes are saved to localStorage and backend (if Strapi connected)
+- Profile information is displayed in various parts of the app
+
 ## Live Preview
+
+### Login Screen
+
+Doctor authentication page with:
+
+- Credential-based login form
+- Demo doctor accounts listed for reference
+- Forgot password link with reset functionality
+- Password reset form for account recovery
 
 ### Dashboard - Plans View
 
@@ -597,7 +621,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 ┌───��─────────────────┐
 │  useAppData()       │ (src/composables/useAppData.ts)
 │  Composable         │ - Manages reactive state
-│                     │ - Coordinates API calls
+│                     ��� - Coordinates API calls
 └────────┬──────────���─┘
          │
          ▼
