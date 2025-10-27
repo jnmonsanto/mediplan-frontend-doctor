@@ -11,8 +11,11 @@ export const mockDoctor: Doctor = {
   age: 45,
 }
 
-export const mockDoctors: Doctor[] = [
-  mockDoctor,
+export const mockDoctors: (Doctor & { password: string })[] = [
+  {
+    ...mockDoctor,
+    password: 'smith123',
+  },
   {
     id: '2',
     name: 'Dr. Johnson',
@@ -22,6 +25,7 @@ export const mockDoctors: Doctor[] = [
     photo: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=400&h=400&fit=crop',
     specialization: 'Physical Therapy',
     age: 38,
+    password: 'johnson123',
   },
   {
     id: '3',
@@ -32,6 +36,7 @@ export const mockDoctors: Doctor[] = [
     photo: 'https://images.unsplash.com/photo-1559839734033-6461accc113d?w=400&h=400&fit=crop',
     specialization: 'Sports Medicine',
     age: 42,
+    password: 'williams123',
   },
 ]
 
