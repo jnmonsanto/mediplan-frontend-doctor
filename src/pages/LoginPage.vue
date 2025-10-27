@@ -10,7 +10,7 @@
       </div>
 
       <!-- Card -->
-      <div class="bg-white rounded-lg shadow-lg p-8">
+      <div class="bg-white rounded-2xl shadow-lg p-8 border border-border">
 
         <!-- Login Form -->
         <template v-if="!showForgotPassword">
