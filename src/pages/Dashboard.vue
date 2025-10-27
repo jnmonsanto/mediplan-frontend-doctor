@@ -48,7 +48,7 @@
           <!-- Add Button -->
           <router-link
             to="/plans/new"
-            class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
+            class="sm:col-span-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -231,7 +231,7 @@
           <!-- Add Button -->
           <router-link
             to="/patients/new"
-            class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
+            class="sm:col-span-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -363,7 +363,7 @@
           <!-- Add Button -->
           <router-link
             to="/exercises/new"
-            class="rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
+            class="sm:col-span-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 flex items-center justify-center gap-2"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
