@@ -133,16 +133,47 @@ src/
 └── App.vue                 # Root component
 ```
 
+## Authentication
+
+### Login Screen
+
+The application requires doctor authentication to access the dashboard. The login page includes:
+
+- **Email & Password Fields** - Enter your credentials
+- **Demo Doctor Accounts** - Pre-configured accounts for testing
+- **Forgot Password** - Link to reset password functionality
+- **Password Reset Form** - Email-based password recovery
+
+### Demo Doctor Credentials
+
+Use any of these credentials to log in:
+
+| Doctor Name | Email | Password |
+|---|---|---|
+| Dr. Smith | smith@clinic.com | smith123 |
+| Dr. Johnson | johnson@clinic.com | johnson123 |
+| Dr. Williams | williams@clinic.com | williams123 |
+
+**Note:** These are demo credentials for development/testing. In production, implement proper authentication with your backend.
+
+### Password Reset
+
+1. Click "Forgot Password?" on the login screen
+2. Enter your email address
+3. Click "Send Reset Link"
+4. A confirmation message will appear
+5. You can then return to login with updated credentials
+
 ## Navigation
 
-The app uses a top-left hamburger menu for navigation:
+After logging in, the app uses a top-left hamburger menu for navigation:
 
 - **Dashboard** - Main view with Plans, Patients, and Exercises selector
 - **Plans** - Dedicated plans list page
 - **Patients** - Dedicated patients list page
 - **Exercises** - Dedicated exercises list page
 
-Top-right profile icon opens doctor profile editor.
+Top-right profile icon opens doctor profile editor (click outside the modal to close).
 
 ## Live Preview
 
