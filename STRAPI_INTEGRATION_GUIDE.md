@@ -64,6 +64,8 @@ The integration is handled through:
 - ✅ Session persistence via localStorage
 - ✅ Protected routes requiring authentication
 - ✅ Automatic data sync with Strapi backend
+- ✅ Responsive layout with app-wide footer
+- ✅ Application footer with branding and automatic year display
 
 ## Quick Start
 
@@ -523,7 +525,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 ## Data Flow Diagram
 
 ```
-┌─────────────────┐
+┌───────────────���─┐
 │   Vue Component │
 │  (Dashboard)    │
 └────────┬────────┘
