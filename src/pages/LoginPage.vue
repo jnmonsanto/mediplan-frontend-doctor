@@ -9,42 +9,70 @@
           <p class="mt-2 text-neutral-600">Doctor Portal</p>
         </div>
 
-        <!-- Instructions -->
-        <div class="mb-8 p-4 rounded-lg bg-blue-50 border border-blue-200">
-          <p class="text-sm text-blue-800">
-            Select your account to log in and manage your patients and exercise plans.
-          </p>
+        <!-- Login Form -->
+        <form @submit.prevent="handleLogin" class="space-y-4 mb-8">
+          <div>
+            <label class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
+            <input
+              v-model="email"
+              type="email"
+              required
+              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-neutral-700 mb-2">Password</label>
+            <input
+              v-model="password"
+              type="password"
+              required
+              class="w-full rounded-lg border border-neutral-300 px-4 py-2 text-neutral-900 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <div v-if="error" class="p-3 rounded-lg bg-red-50 border border-red-200">
+            <p class="text-sm text-red-700">{{ error }}</p>
+          </div>
+
+          <button
+            type="submit"
+            :disabled="isLoading"
+            class="w-full rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {{ isLoading ? 'Logging in...' : 'Login' }}
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="relative mb-8">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-neutral-300"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="bg-white px-2 text-neutral-500">Demo Credentials</span>
+          </div>
         </div>
 
-        <!-- Doctor Selection -->
+        <!-- Demo Credentials List -->
         <div class="space-y-3">
-          <p class="text-sm font-medium text-neutral-700 mb-4">Select Your Account</p>
-          <button
-            v-for="doctor in doctors"
-            :key="doctor.id"
-            @click="selectDoctor(doctor)"
-            class="w-full flex items-center gap-4 p-4 rounded-lg border-2 border-neutral-200 bg-white transition-all hover:border-primary-500 hover:bg-primary-50"
+          <div
+            v-for="(cred, idx) in demoCredentials"
+            :key="idx"
+            class="p-3 rounded-lg bg-neutral-50 border border-neutral-200 text-sm"
           >
-            <img
-              :src="doctor.photo"
-              :alt="doctor.name"
-              class="h-12 w-12 rounded-full object-cover"
-            />
-            <div class="text-left flex-1">
-              <h3 class="font-semibold text-neutral-900">{{ doctor.name }}</h3>
-              <p class="text-sm text-neutral-600">{{ doctor.specialization }}</p>
-              <p class="text-xs text-neutral-500">{{ doctor.email }}</p>
-            </div>
-            <svg class="h-5 w-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+            <p class="font-semibold text-neutral-900">{{ cred.name }}</p>
+            <p class="text-neutral-600">{{ cred.email }}</p>
+            <p class="text-neutral-600">Password: <code class="font-mono bg-white px-2 py-1 rounded">{{ cred.password }}</code></p>
+          </div>
         </div>
 
         <!-- Footer -->
         <div class="mt-8 pt-6 border-t border-neutral-200">
           <p class="text-xs text-neutral-500 text-center">
-            Version 1.0 • Multi-Doctor Management System
+            Multi-Doctor Management System • Version 1.0
           </p>
         </div>
       </div>
@@ -60,9 +88,20 @@ import { initializeData } from '../composables/useAppData'
 import { mockDoctors } from '../api/mockData'
 
 const router = useRouter()
-const { login } = useAuth()
+const { loginWithCredentials } = useAuth()
 
-const doctors = ref(mockDoctors)
+const email = ref('')
+const password = ref('')
+const error = ref('')
+const isLoading = ref(false)
+
+const demoCredentials = ref(
+  mockDoctors.map((d) => ({
+    name: d.name,
+    email: d.email,
+    password: d.password,
+  })),
+)
 
 onMounted(() => {
   // If already logged in, redirect to dashboard
@@ -72,9 +111,23 @@ onMounted(() => {
   }
 })
 
-const selectDoctor = async (doctor) => {
-  login(doctor)
-  await initializeData()
-  router.push('/')
+const handleLogin = async () => {
+  error.value = ''
+  isLoading.value = true
+
+  try {
+    const doctor = loginWithCredentials(email.value, password.value)
+    if (doctor) {
+      await initializeData()
+      router.push('/')
+    } else {
+      error.value = 'Invalid email or password'
+    }
+  } catch (e) {
+    error.value = 'Login failed. Please try again.'
+    console.error(e)
+  } finally {
+    isLoading.value = false
+  }
 }
 </script>
