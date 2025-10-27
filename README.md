@@ -116,6 +116,7 @@ src/
 ├── layouts/
 │   └── MainLayout.vue      # Main app layout with header & menu
 ├── pages/
+│   ├── LoginPage.vue       # Doctor login page with credentials
 │   ├── Dashboard.vue       # Main dashboard with view selector
 │   ├── PlansList.vue       # Plans list view
 │   ├── PlanForm.vue        # Plan add/edit form
