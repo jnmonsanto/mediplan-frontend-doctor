@@ -58,6 +58,28 @@ export const mockPatients: Patient[] = [
     photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
     snsId: 'SNS789012',
   },
+  {
+    id: '3',
+    doctorId: '2',
+    doctor: mockDoctors[1],
+    name: 'Michael Brown',
+    email: 'michael@example.com',
+    phone: '+1 (555) 765-4321',
+    address: '321 Maple Drive, Springfield, IL 62706',
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+    snsId: 'SNS345678',
+  },
+  {
+    id: '4',
+    doctorId: '2',
+    doctor: mockDoctors[1],
+    name: 'Sarah Davis',
+    email: 'sarah@example.com',
+    phone: '+1 (555) 876-5432',
+    address: '654 Pine Road, Springfield, IL 62707',
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+    snsId: 'SNS567890',
+  },
 ]
 
 export const mockExercises: Exercise[] = [
