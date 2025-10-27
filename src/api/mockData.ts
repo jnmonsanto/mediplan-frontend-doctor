@@ -36,6 +36,7 @@ export const mockDoctors: Doctor[] = [
 ]
 
 export const mockPatients: Patient[] = [
+  // Dr. Smith's patients
   {
     id: '1',
     doctorId: '1',
@@ -59,6 +60,18 @@ export const mockPatients: Patient[] = [
     snsId: 'SNS789012',
   },
   {
+    id: '5',
+    doctorId: '1',
+    doctor: mockDoctor,
+    name: 'Robert Johnson',
+    email: 'robert.j@example.com',
+    phone: '+1 (555) 543-2109',
+    address: '321 Cedar Lane, Springfield, IL 62708',
+    photo: 'https://images.unsplash.com/photo-1500595046891-e46f4cdeaa82?w=400&h=400&fit=crop',
+    snsId: 'SNS234567',
+  },
+  // Dr. Johnson's patients
+  {
     id: '3',
     doctorId: '2',
     doctor: mockDoctors[1],
@@ -79,6 +92,51 @@ export const mockPatients: Patient[] = [
     address: '654 Pine Road, Springfield, IL 62707',
     photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
     snsId: 'SNS567890',
+  },
+  {
+    id: '6',
+    doctorId: '2',
+    doctor: mockDoctors[1],
+    name: 'Emily Martinez',
+    email: 'emily.m@example.com',
+    phone: '+1 (555) 432-1098',
+    address: '987 Birch Street, Springfield, IL 62709',
+    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    snsId: 'SNS678901',
+  },
+  // Dr. Williams' patients
+  {
+    id: '7',
+    doctorId: '3',
+    doctor: mockDoctors[2],
+    name: 'David Wilson',
+    email: 'david.w@example.com',
+    phone: '+1 (555) 321-0987',
+    address: '147 Spruce Avenue, Springfield, IL 62710',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    snsId: 'SNS789123',
+  },
+  {
+    id: '8',
+    doctorId: '3',
+    doctor: mockDoctors[2],
+    name: 'Jennifer Lopez',
+    email: 'jennifer.l@example.com',
+    phone: '+1 (555) 210-9876',
+    address: '258 Willow Drive, Springfield, IL 62711',
+    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    snsId: 'SNS890234',
+  },
+  {
+    id: '9',
+    doctorId: '3',
+    doctor: mockDoctors[2],
+    name: 'James Taylor',
+    email: 'james.t@example.com',
+    phone: '+1 (555) 109-8765',
+    address: '369 Ash Circle, Springfield, IL 62712',
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+    snsId: 'SNS901345',
   },
 ]
 
