@@ -196,40 +196,27 @@ const handleLogin = async () => {
   }
 }
 
-const handleResetPassword = async () => {
+const handleSendResetLink = async () => {
   resetError.value = ''
   resetSuccess.value = ''
   isResettingPassword.value = true
 
   try {
-    if (resetPassword.value !== resetPasswordConfirm.value) {
-      resetError.value = 'Passwords do not match'
-      return
-    }
-
-    if (resetPassword.value.length < 6) {
-      resetError.value = 'Password must be at least 6 characters'
-      return
-    }
-
     const doctor = mockDoctors.find((d) => d.email === resetEmail.value)
     if (!doctor) {
-      resetError.value = 'Email not found'
+      resetError.value = 'Email not found in our system'
       return
     }
 
-    doctor.password = resetPassword.value
-    resetSuccess.value = 'Password reset successfully! You can now log in with your new password.'
+    resetSuccess.value = 'Reset link sent! Check your email for instructions.'
 
     setTimeout(() => {
       showForgotPassword.value = false
       resetEmail.value = ''
-      resetPassword.value = ''
-      resetPasswordConfirm.value = ''
       resetSuccess.value = ''
     }, 2000)
   } catch (e) {
-    resetError.value = 'Password reset failed. Please try again.'
+    resetError.value = 'Failed to send reset link. Please try again.'
     console.error(e)
   } finally {
     isResettingPassword.value = false
