@@ -78,7 +78,25 @@ npm run develop
 # Strapi runs at http://localhost:1337 by default
 ```
 
-### Step 2: Configure the Frontend
+### Step 2: Create Doctors Collection in Strapi
+
+1. In Strapi admin panel, create a new Collection Type called `doctors`
+2. Add these fields:
+   - `name` (Text)
+   - `email` (Email)
+   - `password` (Text - will be hashed in production)
+   - `phone` (Text, optional)
+   - `address` (Text, optional)
+   - `photo` (Text - URL, optional)
+   - `specialization` (Text)
+   - `age` (Number)
+
+3. Add sample doctors matching the demo credentials:
+   - Dr. Smith (smith@clinic.com / smith123)
+   - Dr. Johnson (johnson@clinic.com / johnson123)
+   - Dr. Williams (williams@clinic.com / williams123)
+
+### Step 3: Configure the Frontend
 
 Create a `.env.local` file in the root of this project:
 
@@ -87,7 +105,7 @@ Create a `.env.local` file in the root of this project:
 VITE_STRAPI_URL=http://localhost:1337
 ```
 
-### Step 3: Restart the Development Server
+### Step 4: Restart the Development Server
 
 ```bash
 npm run dev
@@ -96,7 +114,8 @@ npm run dev
 The frontend will now:
 
 - Log: `[Strapi] Connected to: http://localhost:1337`
-- Fetch data from your Strapi API instead of using mock data
+- Use the login page to authenticate with your Strapi doctors
+- Fetch data from your Strapi API
 - Automatically fall back to mock data if the API is unreachable
 
 ---
