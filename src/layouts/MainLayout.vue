@@ -46,4 +46,5 @@ import { ref } from 'vue'
 import ProfileModal from '../components/ProfileModal.vue'
 
 const showProfileModal = ref(false)
+const currentYear = new Date().getFullYear()
 </script>
