@@ -613,41 +613,89 @@ module.exports = [
 
 ---
 
-## Authentication Setup
+## Authentication System
 
-Currently, the frontend has no authentication implemented (as per your requirements). When you're ready to add authentication:
+The frontend includes a complete doctor authentication system with login and password reset functionality.
+
+### Current Implementation
+
+The authentication system uses credential-based login with demo doctors:
+
+- **Login Page** (`src/pages/LoginPage.vue`)
+  - Email and password form
+  - Demo credentials display for reference
+  - Forgot password link
+
+- **Password Reset**
+  - Email-based password recovery form
+  - Shows confirmation message after reset
+  - Password is updated in the system
+
+- **Auth Composable** (`src/composables/useAuth.ts`)
+  - `loginWithCredentials(email, password)` - Authenticate doctor
+  - `logout()` - Sign out doctor
+  - `getCurrentDoctor()` - Get current logged-in doctor
+  - Stores doctor info in localStorage
+
+- **Protected Routes**
+  - All dashboard routes require authentication
+  - Unauthenticated users redirected to login page
+  - Session persists across browser refreshes
+
+### Mock Data Authentication
+
+By default, the app uses mock doctors for development:
+
+```typescript
+// src/api/mockData.ts
+export const mockDoctors = [
+  {
+    id: '1',
+    name: 'Dr. Smith',
+    email: 'smith@clinic.com',
+    password: 'smith123',
+    // ... other fields
+  },
+  // More doctors...
+]
+```
+
+### Production Authentication
+
+When connecting to Strapi, implement proper security:
 
 ### Option 1: JWT Tokens (Recommended)
 
 1. **Strapi Side:**
-
    - Enable Strapi's built-in authentication
-   - Configure JWT settings in `config/plugins.js`
+   - Use hashed passwords (bcrypt)
+   - Configure JWT in `config/plugins.js`
 
 2. **Frontend Side:**
-   - Add token storage in `localStorage` or `sessionStorage`
-   - Update `src/api/strapiService.ts` to include auth header:
+   - Store JWT tokens in `localStorage` or `sessionStorage`
+   - Update `src/composables/useAuth.ts` to use token-based auth
+   - Include auth header in API requests:
 
 ```typescript
-// In strapiService.ts, add this method
-private getAuthHeaders() {
-  const token = localStorage.getItem('strapi_token')
+const getAuthHeaders = () => {
+  const token = localStorage.getItem('auth_token')
   return {
     'Content-Type': 'application/json',
     ...(token && { 'Authorization': `Bearer ${token}` }),
   }
 }
-
-// Then use it in fetch calls:
-const response = await fetch(`${API_URL}${endpoint}`, {
-  headers: this.getAuthHeaders(),
-})
 ```
+
+3. **Password Reset:**
+   - Send reset email via Strapi
+   - Generate secure reset tokens
+   - Validate token on password change
 
 ### Option 2: Session-Based Authentication
 
 - Use traditional session cookies
-- Ensure `credentials: 'include'` is set in fetch options
+- Ensure `credentials: 'include'` in fetch options
+- Configure session storage in Strapi
 
 ---
 
