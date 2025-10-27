@@ -53,6 +53,7 @@ The integration is handled through:
 - **`src/composables/useAppData.ts`** - Vue composable that manages application state
 - **`src/composables/useAuth.ts`** - Authentication composable for doctor login/logout
 - **`src/pages/LoginPage.vue`** - Doctor authentication interface with password reset
+- **`src/layouts/MainLayout.vue`** - Main app layout with header, content area, and footer
 - **Environment variables** - Configuration for Strapi URL
 
 ### Key Features
@@ -525,7 +526,7 @@ const response = await fetch(`${API_URL}${endpoint}`, {
 ## Data Flow Diagram
 
 ```
-┌───────────────���─┐
+┌─────────────────┐
 │   Vue Component │
 │  (Dashboard)    │
 └────────┬────────┘
