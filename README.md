@@ -115,7 +115,7 @@ src/
 ├── composables/
 │   └── useAppData.ts       # Main data composable
 ├── layouts/
-│   └── MainLayout.vue      # Main app layout with header & menu
+│   └── MainLayout.vue      # Main app layout with header, main content & footer
 ├── pages/
 │   ├── LoginPage.vue       # Doctor login page with credentials
 │   ├── Dashboard.vue       # Main dashboard with view selector
