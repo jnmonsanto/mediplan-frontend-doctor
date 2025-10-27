@@ -49,10 +49,10 @@
         </form>
 
         <!-- Forgot Password Link -->
-        <div class="text-center">
+        <div class="my-6 text-center">
           <button
             @click="showForgotPassword = !showForgotPassword"
-            class="text-sm text-primary-600 hover:text-primary-700 hover:underline transition-colors"
+            class="text-sm font-semibold text-primary-600 hover:text-primary-700 hover:underline transition-colors"
           >
             Forgot Password?
           </button>
