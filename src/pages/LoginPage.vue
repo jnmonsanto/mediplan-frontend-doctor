@@ -48,6 +48,43 @@
           </button>
         </form>
 
+        <!-- Forgot Password Link -->
+        <div class="text-center">
+          <button
+            @click="showForgotPassword = !showForgotPassword"
+            class="text-sm text-primary-600 hover:text-primary-700 hover:underline transition-colors"
+          >
+            Forgot Password?
+          </button>
+        </div>
+
+        <!-- Password Reset Section -->
+        <div
+          v-if="showForgotPassword"
+          class="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-200"
+        >
+          <p class="text-sm text-blue-900 mb-4">
+            <strong>Password Reset</strong><br />
+            Use one of the demo doctor accounts below to log in:
+          </p>
+          <div class="space-y-2">
+            <div
+              v-for="(cred, idx) in demoCredentials"
+              :key="`reset-${idx}`"
+              class="p-2 rounded bg-white border border-blue-100 text-xs"
+            >
+              <p class="font-semibold text-neutral-900">{{ cred.name }}</p>
+              <p class="text-neutral-600">{{ cred.email }}</p>
+              <p class="text-neutral-600">
+                Password:
+                <code class="font-mono bg-blue-100 px-1 py-0.5 rounded text-xs">{{
+                  cred.password
+                }}</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Divider -->
         <div class="relative mb-8">
           <div class="absolute inset-0 flex items-center">
